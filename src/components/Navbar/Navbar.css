@@ -1,0 +1,96 @@
+.navbar_section {
+  background-color: rgba(15, 15, 15, 0.2509803922);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-area: header;
+  height: 100%;
+}
+.navbar_section .brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.navbar_section .brand a {
+  text-decoration: none;
+  color: var(--white-color);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.navbar_section .nav_item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.navbar_section .nav_item ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  width: 100%;
+}
+.navbar_section .nav_item ul li {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.navbar_section .nav_item ul li a {
+  padding: 8px 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.navbar_section .nav_item ul li a svg g {
+  fill: var(--white-color);
+  opacity: 0.6;
+  transition: all 0.5s;
+}
+.navbar_section .nav_item ul li a.active svg g {
+  fill: var(--white-color);
+  opacity: 1;
+}
+.navbar_section .nav_item ul li a:hover svg g {
+  fill: var(--primary-color);
+  opacity: 1;
+}
+
+.navbar_top_section {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  grid-area: top;
+  background-color: rgba(15, 15, 15, 0.2509803922);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  gap: 16px;
+}
+.navbar_top_section .navbar_top_link {
+  grid-column-start: 2;
+  justify-self: center;
+}
+.navbar_top_section .navbar_top_link svg g {
+  fill: var(--white-color);
+}
+.navbar_top_section .navbar_top_link svg .ladva {
+  fill: var(--primary-color);
+}
+.navbar_top_section .navbar_controls {
+  display: flex;
+  grid-column-start: 3;
+  gap: 8px;
+  justify-self: end;
+  margin-right: 16px;
+}
+.navbar_top_section .navbar_controls button {
+  background-color: transparent;
+  border: none;
+  color: var(--gray-color);
+  opacity: 0.5;
+  transition: all 0.5s;
+}
+.navbar_top_section .navbar_controls button:hover {
+  opacity: 1;
+}/*# sourceMappingURL=Navbar.css.map */

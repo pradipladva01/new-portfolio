@@ -102,7 +102,7 @@
 }
 .main .social_share .social_share_inner .social_bottom a img {
   transition: all 0.5s;
-  width: 16px;
+  width: 20px;
   opacity: 0.6;
 }
 .main .social_share .social_share_inner .social_bottom a:hover img {
@@ -197,4 +197,11 @@
   height: 100%;
   background-color: var(--primary-color);
   transition: width 0.1s ease-out;
+}
+
+@media (max-width: 768px) {
+  .main .main_frame {
+    grid-template-areas: "header header header" "content content content" "bottom bottom bottom";
+    grid-template-columns: 40px 1fr 40px;
+  }
 }/*# sourceMappingURL=Home.css.map */

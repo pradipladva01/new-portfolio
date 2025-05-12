@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar/Navbar";
 import NavbarTop from "../components/Navbar/NavbarTop";
 import SocialShare from "../components/SocialShare";
 import LeaveSoon from "../components/LeaveSoon";
+import FooterBottom from "../components/FooterBottom";
 
 const Home = () => {
   const [isMinimized, setIsMinimized] = useState(false);
@@ -39,7 +40,8 @@ const Home = () => {
             onMinimize={handleMinimize}
             leaveSoon={handleLeaveSoon}
           />
-        {showLeaveSoon && <LeaveSoon onClose={handleCloseLeaveSoon} />}
+          <FooterBottom />
+          {showLeaveSoon && <LeaveSoon onClose={handleCloseLeaveSoon} />}
         </div>
         {showSocialShare && <SocialShare onClose={handleCloseSocialShare} />}
       </div>

@@ -43,6 +43,9 @@
   justify-content: center;
   position: relative;
 }
+.navbar_section .nav_item ul li a svg {
+  font-size: 16px;
+}
 .navbar_section .nav_item ul li a svg g {
   fill: var(--white-color);
   opacity: 0.6;
@@ -55,6 +58,132 @@
 .navbar_section .nav_item ul li a:hover svg g {
   fill: var(--primary-color);
   opacity: 1;
+}
+.navbar_section .res_logo {
+  display: none;
+}
+.navbar_section .burger_menu {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  color: var(--white-color);
+}
+.navbar_section .burger_menu button {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+}
+.navbar_section .burger_menu button .burger_menu_icon {
+  display: none;
+  color: #fff;
+  font-size: 25px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 16;
+  border-radius: 50%;
+}
+.navbar_section .burger_menu button .burger_menu_icon span {
+  width: 16px;
+  height: 1.5px;
+  background: #fff;
+  display: block;
+  transition: all 0.5s;
+  border-radius: 1px;
+}
+.navbar_section .burger_menu button .burger_menu_icon span:last-child {
+  transform-origin: left;
+  margin-top: 5px;
+}
+.navbar_section .burger_menu button .burger_menu_icon.open span:first-child {
+  transform: translate3d(0.3px, 3px, 0px) scale(1, 1) rotate(45deg) scale(1, 1);
+}
+.navbar_section .burger_menu button .burger_menu_icon.open span:last-child {
+  transform: translate3d(3px, 2px, 0px) scale(1, 1) rotate(-45deg) scale(1, 1);
+}
+.navbar_section .navbar_menu {
+  background-color: #0f0f0f;
+  opacity: 0.95;
+  color: var(--white-color);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 0;
+  position: absolute;
+  top: 40px;
+  display: none;
+  transition: height 0.5s ease-out;
+}
+.navbar_section .navbar_menu ul {
+  padding: 48px 0;
+  gap: 32px;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+.navbar_section .navbar_menu ul li {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+.navbar_section .navbar_menu ul li span {
+  width: 40px;
+  text-align: right;
+  font-weight: 500;
+  color: var(--gray-color);
+}
+.navbar_section .navbar_menu ul li a {
+  color: var(--white-color);
+  text-transform: lowercase;
+  width: 100%;
+  font-size: 36px;
+  line-height: 40px;
+  text-decoration: none;
+  position: relative;
+}
+.navbar_section .navbar_menu ul li a::after {
+  content: "/";
+  display: none;
+}
+.navbar_section .navbar_menu ul li a.active {
+  color: var(--primary-color);
+}
+.navbar_section .navbar_menu ul li a.active::after {
+  display: inline-block;
+}
+.navbar_section .navbar_menu .social_profiles {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 40px;
+}
+.navbar_section .navbar_menu .social_profiles a {
+  text-decoration: none;
+  color: var(--gray-color);
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.navbar_section .navbar_menu .social_profiles a img {
+  transition: all 0.5s;
+  transition-timing-function: cubic-bezier(0.615, 0.19, 0.305, 0.91);
+  width: 20px;
+  transform: scale(1);
+}
+.navbar_section .navbar_menu .social_profiles a:hover img {
+  opacity: 1;
+  transform: scale(1.2);
+}
+.navbar_section .navbar_menu.open {
+  height: calc(100dvh - 96px);
 }
 
 .navbar_top_section {
@@ -91,6 +220,38 @@
   opacity: 0.5;
   transition: all 0.5s;
 }
+.navbar_top_section .navbar_controls button svg {
+  font-size: 16px;
+}
 .navbar_top_section .navbar_controls button:hover {
   opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .navbar_section {
+    grid-area: header;
+    grid-template-rows: repeat(1, minmax(0, 1fr));
+    grid-template-columns: subgrid;
+    display: grid;
+    -webkit-backdrop-filter: blur(4px);
+            backdrop-filter: blur(4px);
+    background-color: rgba(15, 15, 15, 0.2509803922);
+    border-bottom: 1px solid #494949;
+  }
+  .navbar_section .nav_item {
+    display: none;
+  }
+  .navbar_section .burger_menu {
+    display: flex;
+  }
+  .navbar_section .navbar_menu {
+    display: inline-flex;
+  }
+  .navbar_section .res_logo {
+    display: block;
+    place-self: center;
+  }
+  .navbar_section .res_logo svg .ladva {
+    fill: var(--primary-color);
+  }
 }/*# sourceMappingURL=Navbar.css.map */

@@ -31,16 +31,32 @@ const SocialShare = ({ onClose }) => {
           </div>
           <div class="social_bottom">
             <span>share</span>
-            <Link to="/">
+            <Link
+              to="https://www.facebook.com/sharer/sharer.php?u=https://pradipladva.in/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img src={facebookIcon} alt={facebookIcon} />
             </Link>
-            <Link to="/">
+            <Link
+              to="https://twitter.com/intent/tweet?url=https://pradipladva.in/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img src={twitterIcon} alt={twitterIcon} />
             </Link>
-            <Link to="/">
+            <Link
+              to="https://www.linkedin.com/sharing/share-offsite/?url=https://pradipladva.in/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img src={linkedinIcon} alt={linkedinIcon} />
             </Link>
-            <Link to="/">
+            <Link
+              to="mailto:?body=https://pradipladva.in/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img src={mailIcon} alt={mailIcon} />
             </Link>
           </div>

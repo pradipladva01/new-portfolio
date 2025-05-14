@@ -20,6 +20,293 @@
   width: 90%;
   height: 90%;
 }
+.main .main_frame .animation_circle_main {
+  position: absolute;
+  inset: 0;
+}
+.main .main_frame .animation_circle_main .circle_1_main,
+.main .main_frame .animation_circle_main .circle_2_main {
+  width: 30%;
+  height: 50%;
+  aspect-ratio: 1/1;
+  position: fixed;
+  top: 15%;
+  right: 0;
+}
+.main .main_frame .animation_circle_main .circle_1_main .circle_1,
+.main .main_frame .animation_circle_main .circle_1_main .circle_2,
+.main .main_frame .animation_circle_main .circle_2_main .circle_1,
+.main .main_frame .animation_circle_main .circle_2_main .circle_2 {
+  filter: blur(200px);
+  width: 100%;
+  height: 100%;
+  border-radius: 999px;
+  background-color: var(--primary-color);
+  opacity: 0.5;
+  transition: width 0.5s;
+}
+.main .main_frame .animation_circle_main .circle_2_main {
+  bottom: 15%;
+  left: 0;
+  top: unset;
+  right: unset;
+}
+.main .main_frame_content {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: auto;
+  position: relative;
+  height: 100%;
+}
+.main .main_frame_content .home_section .scrolling_text {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.main .main_frame_content .home_section .scrolling_text .scrolling_inner {
+  display: flex;
+  white-space: nowrap;
+}
+.main .main_frame_content .home_section .scrolling_text .scrolling_inner span {
+  font-size: 480px;
+  opacity: 0.1;
+  color: var(--black-color);
+  text-transform: lowercase;
+  line-height: 1;
+  font-weight: 800;
+  white-space: nowrap;
+}
+.main .main_frame_content .home_section .container {
+  max-width: 1280px;
+  height: 100%;
+  z-index: 1;
+  position: relative;
+}
+.main .main_frame_content .home_section .container .home_content {
+  height: calc(100dvh - 102px);
+  text-align: center;
+  text-wrap: balance;
+  gap: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+.main .main_frame_content .home_section .container .home_content .tag {
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 500;
+  color: var(--gray-color);
+}
+.main .main_frame_content .home_section .container .home_content h1 {
+  font-family: "Object Sans";
+  font-size: 96px;
+  line-height: 1;
+  color: var(--white-color);
+  margin: 0;
+  letter-spacing: -3px;
+}
+.main .main_frame_content .home_section .container .home_content h1 span {
+  color: var(--primary-color);
+}
+.main .main_frame_content .home_section .container .home_content p {
+  color: var(--gray-color);
+  margin: 0;
+}
+.main .main_frame_content .about_section {
+  padding: 64px 0;
+}
+.main .main_frame_content .about_section h1 {
+  font-family: "Object Sans";
+  font-size: 64px;
+  line-height: 1;
+  color: var(--white-color);
+  margin: 0;
+  letter-spacing: -3px;
+  text-align: center;
+  margin-bottom: 38px;
+}
+.main .main_frame_content .about_section h1 span {
+  color: var(--primary-color);
+}
+.main .main_frame_content .about_section .about_content_main {
+  width: 100%;
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  aspect-ratio: 6/4;
+  overflow: hidden;
+}
+.main .main_frame_content .about_section .about_content_main .box, .main .main_frame_content .about_section .about_content_main .online_box, .main .main_frame_content .about_section .about_content_main .hobbies_box, .main .main_frame_content .about_section .about_content_main .portrait_box, .main .main_frame_content .about_section .about_content_main .where_work_box, .main .main_frame_content .about_section .about_content_main .about_me_box {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  cursor: grab;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  transition: all 0.5s;
+  border: 1px solid #494949;
+}
+.main .main_frame_content .about_section .about_content_main .box .box_top, .main .main_frame_content .about_section .about_content_main .online_box .box_top, .main .main_frame_content .about_section .about_content_main .hobbies_box .box_top, .main .main_frame_content .about_section .about_content_main .portrait_box .box_top, .main .main_frame_content .about_section .about_content_main .where_work_box .box_top, .main .main_frame_content .about_section .about_content_main .about_me_box .box_top {
+  width: 100%;
+  background-color: rgba(15, 15, 15, 0.9019607843);
+  border-bottom: 1px solid #494949;
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+  padding: 0 16px;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+}
+.main .main_frame_content .about_section .about_content_main .box .box_top h6, .main .main_frame_content .about_section .about_content_main .online_box .box_top h6, .main .main_frame_content .about_section .about_content_main .hobbies_box .box_top h6, .main .main_frame_content .about_section .about_content_main .portrait_box .box_top h6, .main .main_frame_content .about_section .about_content_main .where_work_box .box_top h6, .main .main_frame_content .about_section .about_content_main .about_me_box .box_top h6 {
+  color: var(--white-color);
+  margin: 0;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+}
+.main .main_frame_content .about_section .about_content_main .box .box_bottom, .main .main_frame_content .about_section .about_content_main .online_box .box_bottom, .main .main_frame_content .about_section .about_content_main .hobbies_box .box_bottom, .main .main_frame_content .about_section .about_content_main .portrait_box .box_bottom, .main .main_frame_content .about_section .about_content_main .where_work_box .box_bottom, .main .main_frame_content .about_section .about_content_main .about_me_box .box_bottom {
+  width: 100%;
+  background-color: rgba(15, 15, 15, 0.7490196078);
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+  padding: 16px;
+  font-weight: 500;
+  counter-reset: line;
+}
+.main .main_frame_content .about_section .about_content_main .box .box_bottom p, .main .main_frame_content .about_section .about_content_main .online_box .box_bottom p, .main .main_frame_content .about_section .about_content_main .hobbies_box .box_bottom p, .main .main_frame_content .about_section .about_content_main .portrait_box .box_bottom p, .main .main_frame_content .about_section .about_content_main .where_work_box .box_bottom p, .main .main_frame_content .about_section .about_content_main .about_me_box .box_bottom p {
+  margin-bottom: 4px;
+  color: var(--white-color);
+  position: relative;
+  padding-left: 20px;
+  counter-increment: line;
+  line-height: 22px;
+}
+.main .main_frame_content .about_section .about_content_main .box .box_bottom p::before, .main .main_frame_content .about_section .about_content_main .online_box .box_bottom p::before, .main .main_frame_content .about_section .about_content_main .hobbies_box .box_bottom p::before, .main .main_frame_content .about_section .about_content_main .portrait_box .box_bottom p::before, .main .main_frame_content .about_section .about_content_main .where_work_box .box_bottom p::before, .main .main_frame_content .about_section .about_content_main .about_me_box .box_bottom p::before {
+  content: counter(line);
+  position: absolute;
+  display: inline-flex;
+  justify-content: flex-end;
+  margin-left: -20px;
+  padding-right: 8px;
+  text-align: right;
+  width: 20px;
+  color: var(--gray-color);
+}
+.main .main_frame_content .about_section .about_content_main .box .box_bottom p .number, .main .main_frame_content .about_section .about_content_main .online_box .box_bottom p .number, .main .main_frame_content .about_section .about_content_main .hobbies_box .box_bottom p .number, .main .main_frame_content .about_section .about_content_main .portrait_box .box_bottom p .number, .main .main_frame_content .about_section .about_content_main .where_work_box .box_bottom p .number, .main .main_frame_content .about_section .about_content_main .about_me_box .box_bottom p .number {
+  color: var(--gray-color);
+  padding-right: 10px;
+}
+.main .main_frame_content .about_section .about_content_main .box .box_bottom p span, .main .main_frame_content .about_section .about_content_main .online_box .box_bottom p span, .main .main_frame_content .about_section .about_content_main .hobbies_box .box_bottom p span, .main .main_frame_content .about_section .about_content_main .portrait_box .box_bottom p span, .main .main_frame_content .about_section .about_content_main .where_work_box .box_bottom p span, .main .main_frame_content .about_section .about_content_main .about_me_box .box_bottom p span {
+  color: var(--primary-color);
+}
+.main .main_frame_content .about_section .about_content_main .box .box_bottom p .blue, .main .main_frame_content .about_section .about_content_main .online_box .box_bottom p .blue, .main .main_frame_content .about_section .about_content_main .hobbies_box .box_bottom p .blue, .main .main_frame_content .about_section .about_content_main .portrait_box .box_bottom p .blue, .main .main_frame_content .about_section .about_content_main .where_work_box .box_bottom p .blue, .main .main_frame_content .about_section .about_content_main .about_me_box .box_bottom p .blue {
+  color: var(--blue-color);
+}
+.main .main_frame_content .about_section .about_content_main .box .box_bottom p .red, .main .main_frame_content .about_section .about_content_main .online_box .box_bottom p .red, .main .main_frame_content .about_section .about_content_main .hobbies_box .box_bottom p .red, .main .main_frame_content .about_section .about_content_main .portrait_box .box_bottom p .red, .main .main_frame_content .about_section .about_content_main .where_work_box .box_bottom p .red, .main .main_frame_content .about_section .about_content_main .about_me_box .box_bottom p .red {
+  color: var(--red-color);
+}
+.main .main_frame_content .about_section .about_content_main .box .box_bottom p .light_blue, .main .main_frame_content .about_section .about_content_main .online_box .box_bottom p .light_blue, .main .main_frame_content .about_section .about_content_main .hobbies_box .box_bottom p .light_blue, .main .main_frame_content .about_section .about_content_main .portrait_box .box_bottom p .light_blue, .main .main_frame_content .about_section .about_content_main .where_work_box .box_bottom p .light_blue, .main .main_frame_content .about_section .about_content_main .about_me_box .box_bottom p .light_blue {
+  color: var(--light-blue-color);
+}
+.main .main_frame_content .about_section .about_content_main .box .box_bottom p .yellow, .main .main_frame_content .about_section .about_content_main .online_box .box_bottom p .yellow, .main .main_frame_content .about_section .about_content_main .hobbies_box .box_bottom p .yellow, .main .main_frame_content .about_section .about_content_main .portrait_box .box_bottom p .yellow, .main .main_frame_content .about_section .about_content_main .where_work_box .box_bottom p .yellow, .main .main_frame_content .about_section .about_content_main .about_me_box .box_bottom p .yellow {
+  color: var(--yellow-color);
+}
+.main .main_frame_content .about_section .about_content_main .box .box_bottom p .purple, .main .main_frame_content .about_section .about_content_main .online_box .box_bottom p .purple, .main .main_frame_content .about_section .about_content_main .hobbies_box .box_bottom p .purple, .main .main_frame_content .about_section .about_content_main .portrait_box .box_bottom p .purple, .main .main_frame_content .about_section .about_content_main .where_work_box .box_bottom p .purple, .main .main_frame_content .about_section .about_content_main .about_me_box .box_bottom p .purple {
+  color: var(--purple-color);
+}
+.main .main_frame_content .about_section .about_content_main .about_me_box {
+  width: 58.33%;
+  top: 0;
+  left: 21%;
+}
+.main .main_frame_content .about_section .about_content_main .where_work_box {
+  width: 33.33%;
+  top: 50%;
+  left: 0;
+}
+.main .main_frame_content .about_section .about_content_main .portrait_box {
+  width: 25%;
+  top: 33%;
+  right: 0;
+}
+.main .main_frame_content .about_section .about_content_main .portrait_box .box_bottom {
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1/1;
+}
+.main .main_frame_content .about_section .about_content_main .portrait_box .box_bottom .image_main {
+  height: 100%;
+}
+.main .main_frame_content .about_section .about_content_main .portrait_box .box_bottom .image_main img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 0px -90px;
+     object-position: 0px -90px;
+}
+.main .main_frame_content .about_section .about_content_main .hobbies_box {
+  width: 25%;
+  left: 30%;
+  bottom: 0%;
+}
+.main .main_frame_content .about_section .about_content_main .online_box {
+  width: 25%;
+  top: unset;
+  right: 30%;
+  left: unset;
+  bottom: 5%;
+}
+.main .main_frame_content .about_section .about_content_main .online_box .box_bottom p a {
+  text-decoration: none;
+  color: var(--white-color);
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  transition: all 0.5s;
+}
+.main .main_frame_content .about_section .about_content_main .online_box .box_bottom p a svg {
+  font-size: 16px;
+  transition: all 0.5s;
+}
+.main .main_frame_content .about_section .about_content_main .online_box .box_bottom p a svg g {
+  fill: var(--white-color);
+}
+.main .main_frame_content .about_section .about_content_main .online_box .box_bottom p a:hover {
+  color: var(--primary-color);
+}
+.main .main_frame_content .about_section .about_content_main .online_box .box_bottom p a:hover svg {
+  transition: all 0.5s;
+}
+.main .main_frame_content .about_section .about_content_main .online_box .box_bottom p a:hover svg g {
+  fill: var(--primary-color);
+}
+.main .main_frame_content .about_section .get_in_touch_main {
+  justify-content: center;
+  padding-top: 48px;
+}
+.main .main_frame_content .about_section .get_in_touch_main a {
+  padding: 16px 24px;
+}
+.main .main_frame_content .about_section .get_in_touch_main a .emoji {
+  overflow: hidden;
+}
 .main .social_share {
   position: absolute;
   bottom: 10px;
@@ -197,6 +484,55 @@
   height: 100%;
   background-color: var(--primary-color);
   transition: width 0.1s ease-out;
+}
+
+.get_in_touch_main {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  gap: 16px;
+  grid-column-start: 3;
+  justify-content: end;
+}
+.get_in_touch_main a {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  border: 1px solid #494949;
+  background-color: #0f0f0f;
+  position: relative;
+  transition: all 0.5s;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: var(--white-color);
+  min-height: 32px;
+  padding: 0 12px;
+  overflow: hidden;
+}
+.get_in_touch_main a::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  width: 0%;
+  height: 100%;
+  background-color: var(--primary-color);
+  opacity: 0.15;
+  transition: all 0.5s;
+}
+.get_in_touch_main a .emoji_container {
+  overflow: hidden;
+}
+.get_in_touch_main a .emoji_container .emoji {
+  display: inline-block;
+}
+.get_in_touch_main a:hover {
+  border: 1px solid var(--primary-color);
+}
+.get_in_touch_main a:hover::before {
+  width: 100%;
+  left: 0;
 }
 
 @media (max-width: 768px) {

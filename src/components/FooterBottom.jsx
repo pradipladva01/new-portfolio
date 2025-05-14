@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../components/Footer/Footer.css";
-import { Link } from "react-router-dom";
+import AnimatedLinkButton from "./AnimatedLinkButton";
 
 const FooterBottom = () => {
   const [time, setTime] = useState("--:--");
@@ -47,11 +47,8 @@ const FooterBottom = () => {
               </p>
             </div>
           </div>
-          <div class="get_in_touch_main">
-            <Link to="/" class="get_in_touch">
-              Let's-connect
-              <span className="emoji">🤝</span>
-            </Link>
+          <div className="get_in_touch_main">
+            <AnimatedLinkButton to="/contact" text="Let's-connect" emoji="🤝" />
           </div>
         </aside>
       </div>

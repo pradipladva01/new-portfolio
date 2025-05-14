@@ -15,8 +15,7 @@
 .navbar_section .brand a {
   text-decoration: none;
   color: var(--white-color);
-  font-size: 1.5rem;
-  font-weight: bold;
+  font-size: 20px;
 }
 .navbar_section .nav_item {
   display: flex;
@@ -183,7 +182,7 @@
   transform: scale(1.2);
 }
 .navbar_section .navbar_menu.open {
-  height: calc(100dvh - 96px);
+  height: calc(100dvh - 100px);
 }
 
 .navbar_top_section {

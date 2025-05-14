@@ -59,58 +59,13 @@
                         }
 
                         .emoji {
-                            width: 14px;
+                            width: 15px;
                         }
                     }
                 }
             }
         }
 
-        .get_in_touch_main {
-            display: flex;
-            align-items: center;
-            height: 100%;
-            gap: 16px;
-            grid-column-start: 3;
-            justify-content: end;
-        }
-
-        a {
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-            line-height: 20px;
-            border: 1px solid #494949;
-            background-color: #0f0f0f;
-            position: relative;
-            transition: all 0.5s;
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            color: var(--white-color);
-            min-height: 32px;
-            padding: 0 12px;
-
-            &::before {
-                content: '';
-                position: absolute;
-                right: 0;
-                width: 0%;
-                height: 100%;
-                background-color: var(--primary-color);
-                opacity: 0.15;
-                transition: all 0.5s;
-            }
-
-            &:hover {
-                border: 1px solid var(--primary-color);
-
-                &::before {
-                    width: 100%;
-                    left: 0;
-                }
-            }
-        }
     }
 }
 
@@ -121,7 +76,7 @@
 
     .footer_bottom .footer_inner {
         grid-template-columns: repeat(1, minmax(0, 1fr));
-            grid-column: span 2 / span 2;
+        grid-column: span 2 / span 2;
     }
 
 }

@@ -56,48 +56,7 @@
   color: var(--white-color);
 }
 .footer_bottom .footer_inner .location_info_main .location_info p:hover .emoji {
-  width: 14px;
-}
-.footer_bottom .footer_inner .get_in_touch_main {
-  display: flex;
-  align-items: center;
-  height: 100%;
-  gap: 16px;
-  grid-column-start: 3;
-  justify-content: end;
-}
-.footer_bottom .footer_inner a {
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 20px;
-  border: 1px solid #494949;
-  background-color: #0f0f0f;
-  position: relative;
-  transition: all 0.5s;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  color: var(--white-color);
-  min-height: 32px;
-  padding: 0 12px;
-}
-.footer_bottom .footer_inner a::before {
-  content: "";
-  position: absolute;
-  right: 0;
-  width: 0%;
-  height: 100%;
-  background-color: var(--primary-color);
-  opacity: 0.15;
-  transition: all 0.5s;
-}
-.footer_bottom .footer_inner a:hover {
-  border: 1px solid var(--primary-color);
-}
-.footer_bottom .footer_inner a:hover::before {
-  width: 100%;
-  left: 0;
+  width: 15px;
 }
 
 @media (max-width: 1024px) {

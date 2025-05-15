@@ -1,3 +1,78 @@
+.footer_section {
+    padding: 80px 0;
+    backdrop-filter: blur(4px);
+    background-color: #0f0f0f40;
+    font-weight: 500;
+    border-top: 1px solid #494949;
+
+    .footer_inner {
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 120px;
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            align-items: center;
+
+            a {
+                text-decoration: none;
+
+                svg {
+                    g {
+                        fill: var(--white-color);
+                    }
+
+                    .ladva {
+                        fill: var(--primary-color);
+                    }
+                }
+            }
+
+            ul {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 16px;
+                margin: 0;
+                padding: 0;
+                list-style: none;
+
+                li {
+                    a {
+                        text-decoration: none;
+                        color: var(--gray-color);
+                        font-size: 16px;
+                        line-height: 24px;
+                        font-weight: 500;
+                        transition: all 0.5s;
+                        text-transform: lowercase;
+                        padding: 8px 0;
+
+                        &:hover {
+                            color: var(--white-color);
+                        }
+                    }
+                }
+            }
+        }
+
+        .footer_text {
+            font-size: 14px;
+            line-height: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            align-items: center;
+            color: var(--gray-color);
+            text-align: center;
+        }
+    }
+}
+
 .footer_bottom {
     grid-area: bottom;
     display: grid;
@@ -8,6 +83,7 @@
     font-weight: 500;
     font-size: 14px;
     line-height: 20px;
+    border-top: 1px solid #494949;
 
     .footer_inner {
         display: grid;
@@ -81,9 +157,29 @@
 
 }
 
+@media (max-width:991px) {
+    .footer_section .footer_inner nav {
+        flex-direction: column;
+    }
+
+    .footer_section .footer_inner {
+        width: 100%;
+        gap: 80px;
+    }
+}
+
 @media (max-width: 768px) {
     .navbar_top_section {
         display: none;
     }
 
+    .footer_bottom {
+        border: 1px solid #494949;
+    }
+}
+
+@media (max-width:480px) {
+    .footer_section .footer_inner nav ul {
+        flex-direction: column;
+    }
 }

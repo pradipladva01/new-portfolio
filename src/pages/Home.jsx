@@ -10,6 +10,10 @@ import portrait from "../resources/images/portrait.JPG";
 import { Draggable } from "gsap/Draggable";
 import { Link } from "react-router-dom";
 import AnimatedLinkButton from "../components/AnimatedLinkButton";
+import ProjectData from "./data/ProjectData";
+import Footer from "../components/Footer/Footer";
+import { Helmet } from "react-helmet-async";
+import CollaborationCard from "../components/CollaborationCard";
 
 gsap.registerPlugin(Draggable);
 const Home = () => {
@@ -54,11 +58,11 @@ const Home = () => {
     boxRefs.current.forEach((ref) => {
       if (ref) {
         Draggable.create(ref, {
-          type: "x,y", // enable drag in both directions
-          bounds: ".about_content_main", // container bounds
-          inertia: true, // smooth release momentum
-          edgeResistance: 0.85, // resist dragging near edges
-          zIndexBoost: true, // bring to front while dragging
+          type: "x,y",
+          bounds: ".about_content_main",
+          inertia: true,
+          edgeResistance: 0.85,
+          zIndexBoost: true,
           onPress() {
             gsap.to(ref, {
               scale: 1.02,
@@ -80,6 +84,9 @@ const Home = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Pradip Ladva | {process.env.REACT_APP_APP_NAME}</title>
+      </Helmet>
       <div class="main">
         <div className={`main_frame ${isMinimized ? "minimized" : "decrease"}`}>
           <div className="animation_circle_main">
@@ -97,29 +104,29 @@ const Home = () => {
             leaveSoon={handleLeaveSoon}
           />
           <div class="main_frame_content">
-            <section class="home_section">
-              <div className="scrolling_text">
-                <div className="scrolling_inner" ref={scrollingRef}>
-                  <span>developer&nbsp;</span>
-                  <span>developer&nbsp;</span>
+            <div class="frame_content_inner">
+              <section class="home_section">
+                <div className="scrolling_text">
+                  <div className="scrolling_inner" ref={scrollingRef}>
+                    <span>developer&nbsp;</span>
+                    <span>developer&nbsp;</span>
+                  </div>
                 </div>
-              </div>
-              <div class="container">
-                <div class="home_content">
-                  <span className="tag">Home</span>
-                  <h1>
-                    Hi, I’m Pradip, a <br /> <span>creative</span> developer
-                  </h1>
-                  <p>
-                    I bring value to web development projects by merging <br />{" "}
-                    technical expertise with creativity and aesthetics.
-                  </p>
+                <div class="container">
+                  <div class="home_content">
+                    <span className="tag">Home</span>
+                    <h1>
+                      Hi, I’m Pradip, a <br /> <span>creative</span> developer
+                    </h1>
+                    <p>
+                      I bring value to web development projects by merging{" "}
+                      <br /> technical expertise with creativity and aesthetics.
+                    </p>
+                  </div>
                 </div>
-              </div>
-            </section>
-            <section class="about_section">
-              <div class="container">
-                <div class="row">
+              </section>
+              <section class="about_section">
+                <div class="container">
                   <h1>
                     Your <span>creative</span> web developer
                   </h1>
@@ -333,8 +340,63 @@ const Home = () => {
                     />
                   </div>
                 </div>
-              </div>
-            </section>
+              </section>
+              <section class="project_section">
+                <div class="container">
+                  <h1>
+                    Projects <span>highlight</span>
+                  </h1>
+                  <div class="projects_list">
+                    {ProjectData.slice(0, 3).map((project) => (
+                      <Link to={project.link} key={project.id}>
+                        <div className="project_box">
+                          <div className="number">{project.number}</div>
+                          <h3>{project.title}</h3>
+                          <div className="project_year">{project.year}</div>
+                          <div className="project_tech">
+                            {project.tech.map((techItem, i) => (
+                              <div className="pill" key={i}>
+                                {techItem}
+                              </div>
+                            ))}
+                          </div>
+                          <div className="project_image">
+                            <div className="image_card">
+                              <img src={project.image} alt={project.title} />
+                            </div>
+                          </div>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                  <div class="get_in_touch_main">
+                    <AnimatedLinkButton
+                      to="/"
+                      text="all-projects"
+                      emoji={
+                        <>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            aria-hidden="true"
+                            role="img"
+                            class="iconify iconify--custom"
+                            width="1em"
+                            height="1em"
+                            viewBox="0 0 24 24"
+                          >
+                            <g fill="currentColor">
+                              <path d="M12 4a1 1 0 0 0-.707.293 1 1 0 0 0 0 1.414L16.586 11H5a1 1 0 0 0-1 1 1 1 0 0 0 1 1h11.586l-5.293 5.293a1 1 0 0 0 0 1.414 1 1 0 0 0 1.414 0l7-7a1 1 0 0 0 .26-.447 1 1 0 0 0 0-.18L20 12a1 1 0 0 0-.033-.166 1 1 0 0 0-.028-.143 1 1 0 0 0-.232-.398l-7-7A1 1 0 0 0 12 4"></path>
+                            </g>
+                          </svg>
+                        </>
+                      }
+                    />
+                  </div>
+                </div>
+              </section>
+              <CollaborationCard />
+            </div>
+            <Footer />
           </div>
           <FooterBottom />
           {showLeaveSoon && <LeaveSoon onClose={handleCloseLeaveSoon} />}

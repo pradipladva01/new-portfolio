@@ -25,10 +25,11 @@ const AnimatedLinkButton = ({
         .to(
           el,
           {
-            y: -40,
-            scale: 1.4,
-            duration: 0.1,
-            ease: "back.out(2)",
+            y: -20,
+            rotation: gsap.utils.random(-15, 15),
+            scale: 1.2,
+            duration: 0.2,
+            ease: "back.out(3)",
           },
           index * 0.04
         )
@@ -36,11 +37,12 @@ const AnimatedLinkButton = ({
           el,
           {
             y: 0,
+            rotation: 0,
             scale: 1,
-            duration: 0.1,
-            ease: "back.in(1.7)",
+            duration: 0.2,
+            ease: "elastic.out(1, 0.4)",
           },
-          index * 0.04 + 0.1
+          index * 0.04 + 0.15
         );
     });
     lettersTimelineRef.current = lettersTL;
@@ -48,18 +50,23 @@ const AnimatedLinkButton = ({
     const emojiTL = gsap.timeline();
     emojiTL
       .to(emojiRef.current, {
-        x: 50,
+        y: 20,
         opacity: 0,
+        scale: 0.5,
+        rotate: 90,
         duration: 0.2,
         ease: "power1.in",
       })
-      .set(emojiRef.current, { x: -50 })
+      .set(emojiRef.current, { y: -20, scale: 0.5, rotate: -90 })
       .to(emojiRef.current, {
-        x: 0,
+        y: 0,
         opacity: 1,
-        duration: 0.3,
-        ease: "power2.out",
+        scale: 1,
+        rotate: 0,
+        duration: 0.4,
+        ease: "elastic.out(1, 0.4)",
       });
+
     emojiTimelineRef.current = emojiTL;
   };
 

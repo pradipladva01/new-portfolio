@@ -1,27 +1,27 @@
-import React from 'react'
+import React from "react";
 import portrait from "../resources/images/portrait.JPG";
-import AnimatedLinkButton from './AnimatedLinkButton';
+import AnimatedLinkButton from "./AnimatedLinkButton";
 
 const CollaborationCard = () => {
   return (
     <>
-      <section class="collaboration_section">
-        <div class="container">
-          <div class="collaboration_card_main">
-            <div class="collaboration_card">
-              <div class="collaboration_top">
+      <section className="collaboration_section">
+        <div className="container">
+          <div className="collaboration_card_main">
+            <div className="collaboration_card">
+              <div className="collaboration_top">
                 <h6>collaboration</h6>
               </div>
-              <div class="collaboration_bottom">
-                <div class="collaboration_img">
+              <div className="collaboration_bottom">
+                <div className="collaboration_img">
                   <img src={portrait} alt={portrait} />
-                  <div class="hand_emoji">
+                  <div className="hand_emoji">
                     <span>👋</span>
                   </div>
                 </div>
-                <div class="collaboration_content">
+                <div className="collaboration_content">
                   <h3>Let’s work together on your next project</h3>
-                  <div class="get_in_touch_main">
+                  <div className="get_in_touch_main">
                     <AnimatedLinkButton
                       to="/"
                       text="let's-get-in-touch"
@@ -31,7 +31,7 @@ const CollaborationCard = () => {
                             xmlns="http://www.w3.org/2000/svg"
                             aria-hidden="true"
                             role="img"
-                            class="iconify iconify--custom"
+                            className="iconify iconify--custom"
                             width="1em"
                             height="1em"
                             viewBox="0 0 24 24"
@@ -52,6 +52,6 @@ const CollaborationCard = () => {
       </section>
     </>
   );
-}
+};
 
-export default CollaborationCard
+export default CollaborationCard;

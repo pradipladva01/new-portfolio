@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 
 import "./Navbar.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const NavbarTop = ({ isMinimized, onMinimize, leaveSoon }) => {
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const location = useLocation();
+  const isAboutPage = location.pathname === "/about";
 
   const toggleFullscreen = () => {
     if (!document.fullscreenElement) {
@@ -27,7 +29,10 @@ const NavbarTop = ({ isMinimized, onMinimize, leaveSoon }) => {
   return (
     <>
       <div className="navbar_top_section">
-        <Link to="/" className="navbar_top_link">
+        <Link
+          to="/"
+          className={`navbar_top_link ${isAboutPage ? "about_top_bar" : ""}`}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="114"
@@ -46,7 +51,7 @@ const NavbarTop = ({ isMinimized, onMinimize, leaveSoon }) => {
             />
           </svg>
         </Link>
-        <div class="navbar_controls">
+        <div className="navbar_controls">
           <button className="minimize_button" onClick={onMinimize}>
             {isMinimized ? (
               <svg
@@ -84,7 +89,7 @@ const NavbarTop = ({ isMinimized, onMinimize, leaveSoon }) => {
                 xmlns="http://www.w3.org/2000/svg"
                 aria-hidden="true"
                 role="img"
-                class=" iconify iconify--custom"
+                className=" iconify iconify--custom"
                 width="1em"
                 height="1em"
                 viewBox="0 0 16 16"
@@ -113,7 +118,7 @@ const NavbarTop = ({ isMinimized, onMinimize, leaveSoon }) => {
               xmlns="http://www.w3.org/2000/svg"
               aria-hidden="true"
               role="img"
-              class=" iconify iconify--custom"
+              className=" iconify iconify--custom"
               width="1em"
               height="1em"
               viewBox="0 0 16 16"

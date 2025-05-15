@@ -186,6 +186,12 @@
 .navbar_section .navbar_menu.open {
   height: calc(100dvh - 100px);
 }
+.navbar_section .navbar_menu.about_menu ul li a.active {
+  color: var(--blue-color);
+}
+.navbar_section.about_navbar .nav_item ul li a:hover svg g {
+  fill: var(--blue-color);
+}
 
 .navbar_top_section {
   display: grid;
@@ -207,6 +213,9 @@
 }
 .navbar_top_section .navbar_top_link svg .ladva {
   fill: var(--primary-color);
+}
+.navbar_top_section .navbar_top_link.about_top_bar svg .ladva {
+  fill: var(--blue-color);
 }
 .navbar_top_section .navbar_controls {
   display: flex;
@@ -256,6 +265,9 @@
   }
   .navbar_section .res_logo svg .ladva {
     fill: var(--primary-color);
+  }
+  .navbar_section .res_logo.about_logo svg .ladva {
+    fill: var(--blue-color);
   }
   .navbar_section .brand {
     border-right: 1px solid #494949;

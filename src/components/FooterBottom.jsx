@@ -30,10 +30,10 @@ const FooterBottom = () => {
 
   return (
     <>
-      <div class="footer_bottom">
+      <div className="footer_bottom">
         <div></div>
-        <aside class="footer_inner">
-          <div class="location_info_main">
+        <aside className="footer_inner">
+          <div className="location_info_main">
             <div className="location_info">
               <p>
                 Based in <span>India</span> <span className="emoji">🇮🇳</span>

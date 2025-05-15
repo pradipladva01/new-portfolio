@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import "../styles/Home.css";
 import { gsap } from "gsap";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const AnimatedLinkButton = ({
   to = "/",
@@ -14,6 +14,18 @@ const AnimatedLinkButton = ({
 
   const emojiTimelineRef = useRef(null);
   const lettersTimelineRef = useRef(null);
+
+  const location = useLocation();
+
+  // Determine page class based on current route
+  const currentPath = location.pathname;
+  let pageClass = "";
+
+  if (currentPath.includes("/about")) {
+    pageClass = "about_btn";
+  } else if (currentPath.includes("/work")) {
+    pageClass = "work_btn";
+  }
 
   const handleMouseEnter = () => {
     if (emojiTimelineRef.current) emojiTimelineRef.current.kill();
@@ -78,7 +90,7 @@ const AnimatedLinkButton = ({
   return (
     <Link
       to={to}
-      className={`get_in_touch ${className}`}
+      className={`get_in_touch ${className} ${pageClass}`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >

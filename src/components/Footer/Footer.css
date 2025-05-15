@@ -60,6 +60,9 @@
   color: var(--gray-color);
   text-align: center;
 }
+.footer_section.about_footer .footer_inner nav a svg .ladva {
+  fill: var(--blue-color);
+}
 
 .footer_bottom {
   grid-area: bottom;

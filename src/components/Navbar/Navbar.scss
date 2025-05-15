@@ -231,6 +231,36 @@
         &.open {
             height: calc(100dvh - 100px);
         }
+
+        &.about_menu {
+            ul {
+                li {
+                    a {
+                        &.active {
+                            color: var(--blue-color);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.about_navbar {
+        .nav_item {
+            ul {
+                li {
+                    a {
+                        &:hover {
+                            svg {
+                                g {
+                                    fill: var(--blue-color);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -255,6 +285,15 @@
 
             .ladva {
                 fill: var(--primary-color);
+            }
+        }
+
+        &.about_top_bar {
+            svg {
+
+                .ladva {
+                    fill: var(--blue-color);
+                }
             }
         }
     }
@@ -309,18 +348,29 @@
         }
     }
 
-    .navbar_section .res_logo {
-        display: block;
-        place-self: center;
+    .navbar_section {
+        .res_logo {
+            display: block;
+            place-self: center;
 
-        svg {
-            .ladva {
-                fill: var(--primary-color);
+            svg {
+                .ladva {
+                    fill: var(--primary-color);
+                }
+            }
+
+            &.about_logo {
+                svg {
+                    .ladva {
+                        fill: var(--blue-color);
+                    }
+                }
             }
         }
     }
-        .navbar_section .brand{
-            border-right: 1px solid #494949;
-            border-bottom: none;
-        }
+
+    .navbar_section .brand {
+        border-right: 1px solid #494949;
+        border-bottom: none;
+    }
 }

@@ -14,6 +14,7 @@ import ProjectData from "./data/ProjectData";
 import Footer from "../components/Footer/Footer";
 import { Helmet } from "react-helmet-async";
 import CollaborationCard from "../components/CollaborationCard";
+import HeroSection from "../components/HeroSection";
 
 gsap.registerPlugin(Draggable);
 const Home = () => {
@@ -40,17 +41,6 @@ const Home = () => {
   const handleLeaveSoon = () => {
     setShowLeaveSoon((prev) => !prev);
   };
-
-  const scrollingRef = useRef(null);
-
-  useEffect(() => {
-    gsap.to(scrollingRef.current, {
-      xPercent: -50,
-      repeat: -1,
-      ease: "none",
-      duration: 70,
-    });
-  }, []);
 
   const boxRefs = useRef([]);
 
@@ -87,7 +77,7 @@ const Home = () => {
       <Helmet>
         <title>Pradip Ladva | {process.env.REACT_APP_APP_NAME}</title>
       </Helmet>
-      <div class="main">
+      <div className="main">
         <div className={`main_frame ${isMinimized ? "minimized" : "decrease"}`}>
           <div className="animation_circle_main">
             <div className="circle_1_main">
@@ -103,30 +93,23 @@ const Home = () => {
             onMinimize={handleMinimize}
             leaveSoon={handleLeaveSoon}
           />
-          <div class="main_frame_content">
-            <div class="frame_content_inner">
-              <section class="home_section">
-                <div className="scrolling_text">
-                  <div className="scrolling_inner" ref={scrollingRef}>
-                    <span>developer&nbsp;</span>
-                    <span>developer&nbsp;</span>
-                  </div>
-                </div>
-                <div class="container">
-                  <div class="home_content">
-                    <span className="tag">Home</span>
-                    <h1>
-                      Hi, I’m Pradip, a <br /> <span>creative</span> developer
-                    </h1>
-                    <p>
-                      I bring value to web development projects by merging{" "}
-                      <br /> technical expertise with creativity and aesthetics.
-                    </p>
-                  </div>
-                </div>
-              </section>
-              <section class="about_section">
-                <div class="container">
+          <div className="main_frame_content">
+            <div className="frame_content_inner">
+              <HeroSection
+                tag="home"
+                title="Hi, I’m Pradip, a"
+                highlight="creative"
+                scrollingText="developer"
+                role="developer"
+                description={
+                  <>
+                    I bring value to web development projects by merging
+                    <br /> technical expertise with creativity and aesthetics.
+                  </>
+                }
+              />
+              <section className="about_section">
+                <div className="container">
                   <h1>
                     Your <span>creative</span> web developer
                   </h1>
@@ -135,10 +118,10 @@ const Home = () => {
                       className="about_me_box box"
                       ref={(el) => (boxRefs.current[0] = el)}
                     >
-                      <div class="about_me_top box_top">
+                      <div className="about_me_top box_top">
                         <h6>about-me</h6>
                       </div>
-                      <div class="about_me_bottom box_bottom">
+                      <div className="about_me_bottom box_bottom">
                         <p>
                           Nice to meet you! I'm Pradip, I'm a{" "}
                           <span>Freelance Web Developer</span>{" "}
@@ -178,10 +161,10 @@ const Home = () => {
                       className="where_work_box box"
                       ref={(el) => (boxRefs.current[1] = el)}
                     >
-                      <div class="where_work_top box_top">
+                      <div className="where_work_top box_top">
                         <h6>where-i-work</h6>
                       </div>
-                      <div class="where_work_bottom box_bottom">
+                      <div className="where_work_bottom box_bottom">
                         <p>Currently based in Surat, India 🇮🇳</p>
                         <p>
                           Available for remote collaborations across{" "}
@@ -193,11 +176,11 @@ const Home = () => {
                       className="portrait_box box"
                       ref={(el) => (boxRefs.current[2] = el)}
                     >
-                      <div class="portrait_box_top box_top">
+                      <div className="portrait_box_top box_top">
                         <h6>portrait</h6>
                       </div>
-                      <div class="portrait_box_bottom box_bottom">
-                        <div class="image_main">
+                      <div className="portrait_box_bottom box_bottom">
+                        <div className="image_main">
                           <img src={portrait} alt={portrait} />
                         </div>
                       </div>
@@ -206,10 +189,10 @@ const Home = () => {
                       className="hobbies_box box"
                       ref={(el) => (boxRefs.current[3] = el)}
                     >
-                      <div class="hobbies_box_top box_top">
+                      <div className="hobbies_box_top box_top">
                         <h6>hobbies</h6>
                       </div>
-                      <div class="hobbies_box_bottom box_bottom">
+                      <div className="hobbies_box_bottom box_bottom">
                         <p>🏏 cricket</p>
                         <p>🎧 music</p>
                         <p>✈️ traveling</p>
@@ -219,10 +202,10 @@ const Home = () => {
                       className="online_box box"
                       ref={(el) => (boxRefs.current[4] = el)}
                     >
-                      <div class="online_box_top box_top">
+                      <div className="online_box_top box_top">
                         <h6>me-online</h6>
                       </div>
-                      <div class="online_box_bottom box_bottom">
+                      <div className="online_box_bottom box_bottom">
                         <p>
                           <Link to="">
                             linkedin{" "}
@@ -230,7 +213,7 @@ const Home = () => {
                               xmlns="http://www.w3.org/2000/svg"
                               aria-hidden="true"
                               role="img"
-                              class=" iconify iconify--custom"
+                              className=" iconify iconify--custom"
                               width="1em"
                               height="1em"
                               viewBox="0 0 24 24"
@@ -248,7 +231,7 @@ const Home = () => {
                               xmlns="http://www.w3.org/2000/svg"
                               aria-hidden="true"
                               role="img"
-                              class=" iconify iconify--custom"
+                              className=" iconify iconify--custom"
                               width="1em"
                               height="1em"
                               viewBox="0 0 24 24"
@@ -266,7 +249,7 @@ const Home = () => {
                               xmlns="http://www.w3.org/2000/svg"
                               aria-hidden="true"
                               role="img"
-                              class=" iconify iconify--custom"
+                              className=" iconify iconify--custom"
                               width="1em"
                               height="1em"
                               viewBox="0 0 24 24"
@@ -284,7 +267,7 @@ const Home = () => {
                               xmlns="http://www.w3.org/2000/svg"
                               aria-hidden="true"
                               role="img"
-                              class=" iconify iconify--custom"
+                              className=" iconify iconify--custom"
                               width="1em"
                               height="1em"
                               viewBox="0 0 24 24"
@@ -302,7 +285,7 @@ const Home = () => {
                               xmlns="http://www.w3.org/2000/svg"
                               aria-hidden="true"
                               role="img"
-                              class=" iconify iconify--custom"
+                              className=" iconify iconify--custom"
                               width="1em"
                               height="1em"
                               viewBox="0 0 24 24"
@@ -316,7 +299,7 @@ const Home = () => {
                       </div>
                     </div>
                   </div>
-                  <div class="get_in_touch_main">
+                  <div className="get_in_touch_main">
                     <AnimatedLinkButton
                       to="/contact"
                       text="about-me"
@@ -326,7 +309,7 @@ const Home = () => {
                             xmlns="http://www.w3.org/2000/svg"
                             aria-hidden="true"
                             role="img"
-                            class="iconify iconify--custom"
+                            className="iconify iconify--custom"
                             width="1em"
                             height="1em"
                             viewBox="0 0 24 24"
@@ -341,12 +324,12 @@ const Home = () => {
                   </div>
                 </div>
               </section>
-              <section class="project_section">
-                <div class="container">
+              <section className="project_section">
+                <div className="container">
                   <h1>
                     Projects <span>highlight</span>
                   </h1>
-                  <div class="projects_list">
+                  <div className="projects_list">
                     {ProjectData.slice(0, 3).map((project) => (
                       <Link to={project.link} key={project.id}>
                         <div className="project_box">
@@ -369,7 +352,7 @@ const Home = () => {
                       </Link>
                     ))}
                   </div>
-                  <div class="get_in_touch_main">
+                  <div className="get_in_touch_main">
                     <AnimatedLinkButton
                       to="/"
                       text="all-projects"
@@ -379,7 +362,7 @@ const Home = () => {
                             xmlns="http://www.w3.org/2000/svg"
                             aria-hidden="true"
                             role="img"
-                            class="iconify iconify--custom"
+                            className="iconify iconify--custom"
                             width="1em"
                             height="1em"
                             viewBox="0 0 24 24"

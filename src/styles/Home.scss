@@ -37,6 +37,15 @@
                 top: 15%;
                 right: 0;
 
+                &.about_circle {
+
+                    .circle_1,
+                    .circle_2 {
+
+                        background-color: var(--blue-color);
+                    }
+                }
+
                 .circle_1,
                 .circle_2 {
                     filter: blur(200px);
@@ -64,6 +73,27 @@
         height: auto;
         position: relative;
         height: 100%;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        // &::-webkit-scrollbar-track {
+        //     background: transparent;
+        // }
+
+        // &::-webkit-scrollbar-thumb {
+        //     background-color: var(--primary-color);
+        //     border-radius: 6px;
+        //     opacity: 0;
+        //     transition: opacity 0.3s;
+        // }
+
+        // &.about_content_main {
+        //     &::-webkit-scrollbar-thumb {
+        //         background-color: var(--blue-color);
+        //     }
+        // }
 
         .home_section {
             width: 90%;
@@ -98,6 +128,8 @@
             .container {
 
                 .home_content {
+                    width: 90%;
+                    margin: 0 auto;
                     height: calc(100dvh - 102px);
                     text-align: center;
                     text-wrap: balance;
@@ -133,6 +165,14 @@
                     p {
                         color: var(--gray-color);
                         margin: 0;
+                    }
+
+                    &.about_hero {
+                        h1 {
+                            span {
+                                color: var(--blue-color);
+                            }
+                        }
                     }
                 }
             }
@@ -853,6 +893,12 @@
                     background-color: var(--primary-color);
                     transition: width 0.1s ease-out;
                 }
+
+                &.about_page {
+                    .progress {
+                        background-color: var(--blue-color);
+                    }
+                }
             }
 
         }
@@ -909,6 +955,16 @@
             &::before {
                 width: 100%;
                 left: 0;
+            }
+        }
+
+        &.about_btn {
+            &::before {
+                background-color: var(--blue-color);
+            }
+
+            &:hover {
+                border: 1px solid var(--blue-color);
             }
         }
     }
@@ -998,7 +1054,8 @@
     .main .main_frame_content .home_section,
     .main .main_frame_content .about_section,
     .main .main_frame_content .project_section,
-    .main .main_frame_content .collaboration_section {
+    .main .main_frame_content .collaboration_section,
+    .main .main_frame_content .home_section .container .home_content {
         width: 100%;
     }
 
@@ -1099,7 +1156,7 @@
         width: 100%;
     }
 
-        .main .main_frame_content .collaboration_section .collaboration_card .collaboration_bottom,
+    .main .main_frame_content .collaboration_section .collaboration_card .collaboration_bottom,
     .main .main_frame_content .project_section .projects_list a .project_box {
         padding: 20px;
     }

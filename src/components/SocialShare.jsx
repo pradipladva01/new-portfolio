@@ -22,14 +22,14 @@ const SocialShare = ({ onClose }) => {
   return (
     <>
       <div className={`social_share ${animate ? "show" : ""}`}>
-        <div class="social_share_inner">
-          <div class="social_top">
+        <div className="social_share_inner">
+          <div className="social_top">
             <h6>social-share</h6>
             <button className="close_button" onClick={handleCloseClick}>
               <img src={closeIcon} alt="close" />
             </button>
           </div>
-          <div class="social_bottom">
+          <div className="social_bottom">
             <span>share</span>
             <Link
               to="https://www.facebook.com/sharer/sharer.php?u=https://pradipladva.in/"

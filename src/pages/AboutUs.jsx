@@ -85,7 +85,7 @@ const AboutUs = () => {
   return (
     <>
       <Helmet>
-        <title>Pradip Ladva | {process.env.REACT_APP_APP_NAME}</title>
+        <title>About | Pradip Ladva | {process.env.REACT_APP_APP_NAME}</title>
       </Helmet>
       <div className="main">
         <div className={`main_frame ${isMinimized ? "minimized" : "decrease"}`}>

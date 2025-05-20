@@ -3,10 +3,18 @@ import gsap from "gsap";
 import "../styles/Home.css";
 import { useLocation } from "react-router-dom";
 
-const HeroSection = ({ tag, title, highlight, role, description, scrollingText }) => {
+const HeroSection = ({
+  tag,
+  title,
+  highlight,
+  role,
+  description,
+  scrollingText,
+}) => {
   const scrollingRef = useRef(null);
   const location = useLocation();
   const isAboutPage = location.pathname === "/about";
+  const isContactPage = location.pathname === "/contact";
 
   useEffect(() => {
     gsap.to(scrollingRef.current, {
@@ -26,10 +34,14 @@ const HeroSection = ({ tag, title, highlight, role, description, scrollingText }
         </div>
       </div>
       <div className="container">
-        <div className={`home_content ${isAboutPage ? "about_hero" : ""}`}>
+        <div
+          className={`home_content ${isAboutPage ? "about_hero" : ""} ${
+            isContactPage ? "contact_hero" : ""
+          }`}
+        >
           <span className="tag">{tag}</span>
           <h1>
-            {title} <span>{highlight}</span> {role}
+            {title} <span>{highlight}</span>{role}
           </h1>
           <p>{description}</p>
         </div>

@@ -14,6 +14,7 @@ const LeaveSoon = ({ onClose }) => {
   const [isPaused, setIsPaused] = useState(false);
   const location = useLocation();
   const isAboutPage = location.pathname === "/about";
+  const isContactPage = location.pathname === "/contact";
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -62,7 +63,11 @@ const LeaveSoon = ({ onClose }) => {
         onMouseLeave={handleMouseLeave}
       >
         <div className="leave_soon_inner">
-          <div className={`progress_bar ${isAboutPage ? "about_page" : ""}`}>
+          <div
+            className={`progress_bar ${isAboutPage ? "about_page" : ""} ${
+              isContactPage ? "contact_page" : ""
+            }`}
+          >
             <div className="progress" style={{ width: `${progress}%` }}></div>
           </div>
           <div className="leave_soon_top">

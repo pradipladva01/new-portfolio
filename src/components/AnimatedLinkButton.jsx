@@ -1,31 +1,22 @@
 import React, { useRef } from "react";
 import "../styles/Home.css";
 import { gsap } from "gsap";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const AnimatedLinkButton = ({
   to = "/",
   text = "Let's-connect",
   emoji = "🤝",
   className = "",
+  type = "",
+  disabled = "",
+  onClick = () => {},
+  asButton = false, // <- NEW PROP
 }) => {
   const lettersRef = useRef([]);
   const emojiRef = useRef();
-
   const emojiTimelineRef = useRef(null);
   const lettersTimelineRef = useRef(null);
-
-  const location = useLocation();
-
-  // Determine page class based on current route
-  const currentPath = location.pathname;
-  let pageClass = "";
-
-  if (currentPath.includes("/about")) {
-    pageClass = "about_btn";
-  } else if (currentPath.includes("/work")) {
-    pageClass = "work_btn";
-  }
 
   const handleMouseEnter = () => {
     if (emojiTimelineRef.current) emojiTimelineRef.current.kill();
@@ -87,13 +78,14 @@ const AnimatedLinkButton = ({
     if (emojiTimelineRef.current) emojiTimelineRef.current.reverse();
   };
 
-  return (
-    <Link
-      to={to}
-      className={`get_in_touch ${className} ${pageClass}`}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
+  const commonProps = {
+    className: `get_in_touch ${className}`,
+    onMouseEnter: handleMouseEnter,
+    onMouseLeave: handleMouseLeave,
+  };
+
+  const content = (
+    <>
       <span>
         {text.split("").map((char, index) => (
           <span
@@ -112,6 +104,16 @@ const AnimatedLinkButton = ({
       >
         {emoji}
       </span>
+    </>
+  );
+
+  return asButton ? (
+    <button {...commonProps} onClick={onClick} type={type} disabled={disabled}>
+      {content}
+    </button>
+  ) : (
+    <Link to={to} {...commonProps}>
+      {content}
     </Link>
   );
 };

@@ -7,6 +7,7 @@ const NavbarTop = ({ isMinimized, onMinimize, leaveSoon }) => {
   const [isFullscreen, setIsFullscreen] = useState(false);
   const location = useLocation();
   const isAboutPage = location.pathname === "/about";
+  const isContactPage = location.pathname === "/contact";
 
   const toggleFullscreen = () => {
     if (!document.fullscreenElement) {
@@ -31,7 +32,9 @@ const NavbarTop = ({ isMinimized, onMinimize, leaveSoon }) => {
       <div className="navbar_top_section">
         <Link
           to="/"
-          className={`navbar_top_link ${isAboutPage ? "about_top_bar" : ""}`}
+          className={`navbar_top_link ${isAboutPage ? "about_top_bar" : ""} ${
+            isContactPage ? "contact_top_bar" : ""
+          }`}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

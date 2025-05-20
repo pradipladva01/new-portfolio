@@ -10,6 +10,7 @@ import discordIcon from "../../resources/images/discord_icon.svg";
 const Navbar = () => {
   const location = useLocation();
   const isAboutPage = location.pathname === "/about";
+  const isContactPage = location.pathname === "/contact";
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
@@ -18,7 +19,11 @@ const Navbar = () => {
 
   return (
     <>
-      <div className={`navbar_section ${isAboutPage ? "about_navbar" : ""}`}>
+      <div
+        className={`navbar_section ${isAboutPage ? "about_navbar" : ""} ${
+          isContactPage ? "contact_navbar" : ""
+        }`}
+      >
         <div className="brand">
           <NavLink to="/">p</NavLink>
         </div>
@@ -98,7 +103,12 @@ const Navbar = () => {
             </li>
           </ul>
         </nav>
-        <Link to="/" className={`res_logo ${isAboutPage ? "about_logo" : ""}`}>
+        <Link
+          to="/"
+          className={`res_logo ${isAboutPage ? "about_logo" : ""} ${
+            isContactPage ? "contact_logo" : ""
+          }`}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="114"
@@ -131,7 +141,7 @@ const Navbar = () => {
         <div
           className={`navbar_menu ${menuOpen ? "open" : ""} ${
             isAboutPage ? "about_menu" : ""
-          }`}
+          } ${isContactPage ? "contact_menu" : ""}`}
         >
           <ul>
             <li>

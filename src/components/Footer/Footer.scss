@@ -85,6 +85,20 @@
             }
         }
     }
+
+    &.contact_footer {
+        .footer_inner {
+            nav {
+                a {
+                    svg {
+                        .ladva {
+                            fill: var(--light-blue-color);
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 .footer_bottom {
@@ -156,6 +170,80 @@
             }
         }
 
+        .get_in_touch_main {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            gap: 16px;
+            grid-column-start: 3;
+            justify-content: end;
+
+            button {
+                text-decoration: none;
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 20px;
+                border: 1px solid #494949;
+                background-color: #0f0f0f;
+                position: relative;
+                transition: all 0.5s;
+                display: flex;
+                align-items: center;
+                gap: 16px;
+                color: var(--white-color);
+                min-height: 32px;
+                padding: 0 12px;
+                overflow: hidden;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    right: 0;
+                    width: 0%;
+                    height: 100%;
+                    background-color: var(--primary-color);
+                    opacity: 0.15;
+                    transition: all 0.5s;
+                }
+
+                .emoji_container {
+                    overflow: hidden;
+
+                    .emoji {
+                        display: inline-block;
+                    }
+                }
+
+                &:hover {
+                    border: 1px solid var(--primary-color);
+
+                    &::before {
+                        width: 100%;
+                        left: 0;
+                    }
+                }
+
+                &.about_btn {
+                    &::before {
+                        background-color: var(--blue-color);
+                    }
+
+                    &:hover {
+                        border: 1px solid var(--blue-color);
+                    }
+                }
+
+                &.contact_btn {
+                    &::before {
+                        background-color: var(--light-blue-color);
+                    }
+
+                    &:hover {
+                        border: 1px solid var(--light-blue-color);
+                    }
+                }
+            }
+        }
     }
 }
 

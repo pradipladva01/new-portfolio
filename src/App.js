@@ -4,14 +4,22 @@ import "./App.css";
 import ScrollToTop from "./components/ScrollToTop";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import { SnackbarProvider } from "notistack";
 
 function App() {
   return (
     <>
       <ScrollToTop />
-      <Suspense>
-        <Routes />
-      </Suspense>
+      <SnackbarProvider
+        maxSnack={3}
+        classes={{
+          root: "custom-snackbar",
+        }}
+      >
+        <Suspense>
+          <Routes />
+        </Suspense>
+      </SnackbarProvider>
     </>
   );
 }

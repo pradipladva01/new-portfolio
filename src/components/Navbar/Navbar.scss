@@ -243,6 +243,17 @@
                 }
             }
         }
+        &.contact_menu {
+            ul {
+                li {
+                    a {
+                        &.active {
+                            color: var(--light-blue-color);
+                        }
+                    }
+                }
+            }
+        }
     }
 
     &.about_navbar {
@@ -254,6 +265,23 @@
                             svg {
                                 g {
                                     fill: var(--blue-color);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.contact_navbar {
+        .nav_item {
+            ul {
+                li {
+                    a {
+                        &:hover {
+                            svg {
+                                g {
+                                    fill: var(--light-blue-color);
                                 }
                             }
                         }
@@ -293,6 +321,14 @@
 
                 .ladva {
                     fill: var(--blue-color);
+                }
+            }
+        }
+        &.contact_top_bar {
+            svg {
+
+                .ladva {
+                    fill: var(--light-blue-color);
                 }
             }
         }
@@ -363,6 +399,13 @@
                 svg {
                     .ladva {
                         fill: var(--blue-color);
+                    }
+                }
+            }
+            &.contact_logo {
+                svg {
+                    .ladva {
+                        fill: var(--light-blue-color);
                     }
                 }
             }

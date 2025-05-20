@@ -5,9 +5,14 @@ import { Link, useLocation } from "react-router-dom";
 const Footer = () => {
   const location = useLocation();
   const isAboutPage = location.pathname === "/about";
+  const isContactPage = location.pathname === "/contact";
   return (
     <>
-      <footer className={`footer_section ${isAboutPage ? "about_footer" : ""}`}>
+      <footer
+        className={`footer_section ${isAboutPage ? "about_footer" : ""} ${
+          isContactPage ? "contact_footer" : ""
+        }`}
+      >
         <div className="container">
           <div className="footer_inner">
             <nav>

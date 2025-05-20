@@ -2,6 +2,7 @@ import React, { lazy } from "react";
 import { useRoutes, Navigate } from "react-router-dom";
 import { retry } from "./utils/CommonFunctions";
 import AboutUs from "./pages/AboutUs";
+import Contact from "./pages/Contact";
 const Home = lazy(() => retry(() => import("./pages/Home")));
 
 const Routes = () => {
@@ -13,6 +14,10 @@ const Routes = () => {
     {
       path: "/about",
       element: <AboutUs />,
+    },
+    {
+      path: "/contact",
+      element: <Contact />,
     },
     {
       path: "/*",

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../components/Footer/Footer.css";
 import AnimatedLinkButton from "./AnimatedLinkButton";
+import { useLocation } from "react-router-dom";
 
 const FooterBottom = () => {
   const [time, setTime] = useState("--:--");
@@ -28,9 +29,17 @@ const FooterBottom = () => {
     return () => clearInterval(interval);
   }, []);
 
+  const location = useLocation();
+  const isAboutPage = location.pathname === "/about";
+  const isContactPage = location.pathname === "/contact";
+
   return (
     <>
-      <div className="footer_bottom">
+      <div
+        className={`footer_bottom ${isAboutPage ? "about_footer" : ""} ${
+          isContactPage ? "contact_footer" : ""
+        }`}
+      >
         <div></div>
         <aside className="footer_inner">
           <div className="location_info_main">

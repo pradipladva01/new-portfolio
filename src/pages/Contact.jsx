@@ -193,7 +193,7 @@ const AboutUs = () => {
                 }
               />
               <section className="contact_us_section">
-                <div class="container">
+                <div className="container">
                   <div className="contact_box_main">
                     <div className="contact_box">
                       <div className="contact_box_top">
@@ -220,7 +220,8 @@ const AboutUs = () => {
                               <div className="form_control">
                                 <label htmlFor="fullName">
                                   <p>
-                                    full-name<span class="input_star"> *</span>
+                                    full-name
+                                    <span className="input_star"> *</span>
                                   </p>
                                 </label>
                               </div>
@@ -268,7 +269,7 @@ const AboutUs = () => {
                               <div className="form_control">
                                 <label htmlFor="email">
                                   <p>
-                                    email<span class="input_star"> *</span>
+                                    email<span className="input_star"> *</span>
                                   </p>
                                 </label>
                               </div>
@@ -293,7 +294,7 @@ const AboutUs = () => {
                                 <label htmlFor="email">
                                   <p>
                                     your-message
-                                    <span class="input_star"> *</span>
+                                    <span className="input_star"> *</span>
                                   </p>
                                 </label>
                               </div>
@@ -331,7 +332,7 @@ const AboutUs = () => {
                                         xmlns="http://www.w3.org/2000/svg"
                                         aria-hidden="true"
                                         role="img"
-                                        class=" iconify iconify--custom"
+                                        className=" iconify iconify--custom"
                                         width="1em"
                                         height="1em"
                                         viewBox="0 0 24 24"

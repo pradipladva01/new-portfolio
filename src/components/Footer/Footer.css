@@ -188,6 +188,18 @@
 .footer_bottom .footer_inner .get_in_touch_main button.contact_btn:hover {
   border: 1px solid var(--light-blue-color);
 }
+.footer_bottom.about_footer a::before {
+  background-color: var(--blue-color);
+}
+.footer_bottom.about_footer a:hover {
+  border: 1px solid var(--blue-color);
+}
+.footer_bottom.contact_footer a::before {
+  background-color: var(--light-blue-color);
+}
+.footer_bottom.contact_footer a:hover {
+  border: 1px solid var(--light-blue-color);
+}
 
 @media (max-width: 1024px) {
   .footer_bottom .footer_inner .location_info_main {

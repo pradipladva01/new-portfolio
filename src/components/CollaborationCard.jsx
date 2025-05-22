@@ -1,11 +1,19 @@
 import React from "react";
 import portrait from "../resources/images/portrait.JPG";
 import AnimatedLinkButton from "./AnimatedLinkButton";
+import { useLocation } from "react-router-dom";
 
 const CollaborationCard = () => {
+  const location = useLocation();
+  const isAboutPage = location.pathname === "/about";
+  const isContactPage = location.pathname === "/contact";
   return (
     <>
-      <section className="collaboration_section">
+      <section
+        className={`collaboration_section ${
+          isAboutPage ? "about_collaboration" : ""
+        } ${isContactPage ? "contact_collaboration" : ""}`}
+      >
         <div className="container">
           <div className="collaboration_card_main">
             <div className="collaboration_card">

@@ -11,7 +11,7 @@ const AnimatedLinkButton = ({
   type = "",
   disabled = "",
   onClick = () => {},
-  asButton = false, // <- NEW PROP
+  asButton = false,
 }) => {
   const lettersRef = useRef([]);
   const emojiRef = useRef();

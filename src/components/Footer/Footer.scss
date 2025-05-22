@@ -245,6 +245,30 @@
             }
         }
     }
+
+    &.about_footer {
+        a {
+            &::before {
+                background-color: var(--blue-color);
+            }
+
+            &:hover {
+                border: 1px solid var(--blue-color);
+            }
+        }
+    }
+
+    &.contact_footer {
+        a {
+            &::before {
+                background-color: var(--light-blue-color);
+            }
+
+            &:hover {
+                border: 1px solid var(--light-blue-color);
+            }
+        }
+    }
 }
 
 @media (max-width: 1024px) {

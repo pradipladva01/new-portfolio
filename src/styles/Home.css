@@ -776,6 +776,18 @@
 .main .main_frame_content .collaboration_section .collaboration_card .collaboration_bottom .collaboration_content .get_in_touch_main a .emoji {
   overflow: hidden;
 }
+.main .main_frame_content .collaboration_section.about_collaboration a::before {
+  background-color: var(--blue-color);
+}
+.main .main_frame_content .collaboration_section.about_collaboration a:hover {
+  border: 1px solid var(--blue-color);
+}
+.main .main_frame_content .collaboration_section.contact_collaboration a::before {
+  background-color: var(--light-blue-color);
+}
+.main .main_frame_content .collaboration_section.contact_collaboration a:hover {
+  border: 1px solid var(--light-blue-color);
+}
 .main .social_share {
   position: absolute;
   bottom: 10px;
@@ -1009,17 +1021,19 @@
   width: 100%;
   left: 0;
 }
-.get_in_touch_main a.about_btn::before {
-  background-color: var(--blue-color);
+
+.loader_container {
+  width: 100%;
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s ease;
 }
-.get_in_touch_main a.about_btn:hover {
-  border: 1px solid var(--blue-color);
-}
-.get_in_touch_main a.contact_btn::before {
-  background-color: var(--light-blue-color);
-}
-.get_in_touch_main a.contact_btn:hover {
-  border: 1px solid var(--light-blue-color);
+.loader_container h1 {
+  color: var(--white-color);
+  font-weight: 800;
+  margin: 0;
 }
 
 @media (max-width: 1280px) {

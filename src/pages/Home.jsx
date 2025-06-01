@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import "../styles/Home.css";
 import gsap from "gsap";
 import Navbar from "../components/Navbar/Navbar";
@@ -15,33 +15,11 @@ import Footer from "../components/Footer/Footer";
 import { Helmet } from "react-helmet-async";
 import CollaborationCard from "../components/CollaborationCard";
 import HeroSection from "../components/HeroSection";
+import useSocialUI from "../components/useSocialUI";
 
 gsap.registerPlugin(Draggable);
+
 const Home = () => {
-  const [isMinimized, setIsMinimized] = useState(false);
-  const [showSocialShare, setShowSocialShare] = useState(false);
-  const [showLeaveSoon, setShowLeaveSoon] = useState(false);
-
-  const handleMinimize = () => {
-    setIsMinimized((prev) => !prev);
-    setShowSocialShare((prev) => !prev);
-  };
-
-  const handleCloseSocialShare = () => {
-    setIsMinimized(false);
-    setTimeout(() => {
-      setShowSocialShare(false);
-    }, 500);
-  };
-  const handleCloseLeaveSoon = () => {
-    setTimeout(() => {
-      setShowLeaveSoon(false);
-    }, 500);
-  };
-  const handleLeaveSoon = () => {
-    setShowLeaveSoon((prev) => !prev);
-  };
-
   const boxRefs = useRef([]);
 
   useEffect(() => {
@@ -51,26 +29,22 @@ const Home = () => {
           type: "x,y",
           bounds: ".about_content_main",
           inertia: true,
-          edgeResistance: 0.85,
+          edgeResistance: 1,
           zIndexBoost: true,
-          onPress() {
-            gsap.to(ref, {
-              scale: 1.02,
-              duration: 0.2,
-              ease: "power2.out",
-            });
-          },
-          onRelease() {
-            gsap.to(ref, {
-              scale: 1,
-              duration: 0.3,
-              ease: "power2.out",
-            });
-          },
         });
       }
     });
   }, []);
+
+  const {
+    isMinimized,
+    showSocialShare,
+    showLeaveSoon,
+    handleMinimize,
+    handleCloseSocialShare,
+    handleLeaveSoon,
+    handleCloseLeaveSoon,
+  } = useSocialUI();
 
   return (
     <>
@@ -261,7 +235,7 @@ const Home = () => {
                           </Link>
                         </p>
                         <p>
-                          <Link to="">
+                          <Link>
                             discord{" "}
                             <svg
                               xmlns="http://www.w3.org/2000/svg"

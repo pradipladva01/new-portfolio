@@ -7,39 +7,43 @@ import NavbarTop from "../components/Navbar/NavbarTop";
 import SocialShare from "../components/SocialShare";
 import LeaveSoon from "../components/LeaveSoon";
 import FooterBottom from "../components/FooterBottom";
-import { Draggable } from "gsap/Draggable";
 import Footer from "../components/Footer/Footer";
 import { Helmet } from "react-helmet-async";
 import CollaborationCard from "../components/CollaborationCard";
 import { useLocation } from "react-router-dom";
 import HeroSection from "../components/HeroSection";
+import useSocialUI from "../components/useSocialUI";
+import { motion } from "framer-motion";
 
 const AboutUs = () => {
-  const [isMinimized, setIsMinimized] = useState(false);
-  const [showSocialShare, setShowSocialShare] = useState(false);
-  const [showLeaveSoon, setShowLeaveSoon] = useState(false);
   const location = useLocation();
   const isAboutPage = location.pathname === "/about";
+  const [boxes, setBoxes] = useState({
+    box1: { x: 50, y: 50 },
+    box2: { x: 200, y: 100 },
+    box3: { x: 120, y: 220 },
+  });
 
-  const handleMinimize = () => {
-    setIsMinimized((prev) => !prev);
-    setShowSocialShare((prev) => !prev);
+  // Update position on drag end
+  const handleDragEnd = (id, event, info) => {
+    setBoxes((prev) => ({
+      ...prev,
+      [id]: {
+        x: info.point.x,
+        y: info.point.y,
+      },
+    }));
   };
 
-  const handleCloseSocialShare = () => {
-    setIsMinimized(false);
-    setTimeout(() => {
-      setShowSocialShare(false);
-    }, 500);
-  };
-  const handleCloseLeaveSoon = () => {
-    setTimeout(() => {
-      setShowLeaveSoon(false);
-    }, 500);
-  };
-  const handleLeaveSoon = () => {
-    setShowLeaveSoon((prev) => !prev);
-  };
+  const {
+    isMinimized,
+    showSocialShare,
+    showLeaveSoon,
+    handleMinimize,
+    handleCloseSocialShare,
+    handleLeaveSoon,
+    handleCloseLeaveSoon,
+  } = useSocialUI();
 
   const scrollingRef = useRef(null);
 
@@ -49,36 +53,6 @@ const AboutUs = () => {
       repeat: -1,
       ease: "none",
       duration: 70,
-    });
-  }, []);
-
-  const boxRefs = useRef([]);
-
-  useEffect(() => {
-    boxRefs.current.forEach((ref) => {
-      if (ref) {
-        Draggable.create(ref, {
-          type: "x,y",
-          bounds: ".about_content_main",
-          inertia: true,
-          edgeResistance: 0.85,
-          zIndexBoost: true,
-          onPress() {
-            gsap.to(ref, {
-              scale: 1.02,
-              duration: 0.2,
-              ease: "power2.out",
-            });
-          },
-          onRelease() {
-            gsap.to(ref, {
-              scale: 1,
-              duration: 0.3,
-              ease: "power2.out",
-            });
-          },
-        });
-      }
     });
   }, []);
 
@@ -127,6 +101,49 @@ const AboutUs = () => {
                   </>
                 }
               />
+              <div
+                style={{
+                  position: "relative",
+                  width: "100%",
+                  height: 500,
+                  border: "2px dashed #bbb",
+                  borderRadius: 10,
+                  marginTop: 20,
+                  overflow: "hidden", // keep boxes inside container visually
+                }}
+              >
+                {Object.entries(boxes).map(([id, pos]) => (
+                  <motion.div
+                    key={id}
+                    drag
+                    dragMomentum={false}
+                    dragConstraints={{
+                      top: 0,
+                      left: 0,
+                      right: 600,
+                      bottom: 500,
+                    }}
+                    onDragEnd={(event, info) => handleDragEnd(id, event, info)}
+                    style={{
+                      position: "absolute",
+                      top: pos.y,
+                      left: pos.x,
+                      width: 100,
+                      height: 100,
+                      backgroundColor: "#90caf9",
+                      border: "2px solid #1976d2",
+                      borderRadius: 8,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      cursor: "grab",
+                      userSelect: "none",
+                    }}
+                  >
+                    {id}
+                  </motion.div>
+                ))}
+              </div>
               <CollaborationCard />
             </div>
             <Footer />

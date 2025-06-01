@@ -99,6 +99,20 @@
             }
         }
     }
+
+    &.work_footer {
+        .footer_inner {
+            nav {
+                a {
+                    svg {
+                        .ladva {
+                            fill: var(--red-color);
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 .footer_bottom {
@@ -266,6 +280,18 @@
 
             &:hover {
                 border: 1px solid var(--light-blue-color);
+            }
+        }
+    }
+
+    &.work_footer {
+        a {
+            &::before {
+                background-color: var(--red-color);
+            }
+
+            &:hover {
+                border: 1px solid var(--red-color);
             }
         }
     }

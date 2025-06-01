@@ -66,6 +66,9 @@
 .footer_section.contact_footer .footer_inner nav a svg .ladva {
   fill: var(--light-blue-color);
 }
+.footer_section.work_footer .footer_inner nav a svg .ladva {
+  fill: var(--red-color);
+}
 
 .footer_bottom {
   grid-area: bottom;
@@ -199,6 +202,12 @@
 }
 .footer_bottom.contact_footer a:hover {
   border: 1px solid var(--light-blue-color);
+}
+.footer_bottom.work_footer a::before {
+  background-color: var(--red-color);
+}
+.footer_bottom.work_footer a:hover {
+  border: 1px solid var(--red-color);
 }
 
 @media (max-width: 1024px) {

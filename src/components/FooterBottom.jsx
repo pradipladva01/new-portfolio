@@ -6,6 +6,10 @@ import { useLocation } from "react-router-dom";
 const FooterBottom = () => {
   const [time, setTime] = useState("--:--");
   const [timeEmoji, setTimeEmoji] = useState("☀️");
+  const location = useLocation();
+  const isAboutPage = location.pathname === "/about";
+  const isContactPage = location.pathname === "/contact";
+  const isWorkPage = location.pathname === "/work";
 
   const updateTime = () => {
     const now = new Date();
@@ -29,16 +33,12 @@ const FooterBottom = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const location = useLocation();
-  const isAboutPage = location.pathname === "/about";
-  const isContactPage = location.pathname === "/contact";
-
   return (
     <>
       <div
-        className={`footer_bottom ${isAboutPage ? "about_footer" : ""} ${
+        className={`footer_bottom ${isAboutPage ? "about_footer" : ""}${
           isContactPage ? "contact_footer" : ""
-        }`}
+        }${isWorkPage ? "work_footer" : ""}`}
       >
         <div></div>
         <aside className="footer_inner">

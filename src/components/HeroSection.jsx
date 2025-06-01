@@ -15,6 +15,7 @@ const HeroSection = ({
   const location = useLocation();
   const isAboutPage = location.pathname === "/about";
   const isContactPage = location.pathname === "/contact";
+  const isWorkPage = location.pathname === "/work";
 
   useEffect(() => {
     gsap.to(scrollingRef.current, {
@@ -37,11 +38,12 @@ const HeroSection = ({
         <div
           className={`home_content ${isAboutPage ? "about_hero" : ""} ${
             isContactPage ? "contact_hero" : ""
-          }`}
+          } ${isWorkPage ? "work_hero" : ""}`}
         >
           <span className="tag">{tag}</span>
           <h1>
-            {title} <span>{highlight}</span>{role}
+            {title} <span>{highlight}</span>
+            {role}
           </h1>
           <p>{description}</p>
         </div>

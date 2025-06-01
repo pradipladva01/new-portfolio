@@ -7,12 +7,15 @@ const CollaborationCard = () => {
   const location = useLocation();
   const isAboutPage = location.pathname === "/about";
   const isContactPage = location.pathname === "/contact";
+  const isWorkPage = location.pathname === "/work";
   return (
     <>
       <section
         className={`collaboration_section ${
           isAboutPage ? "about_collaboration" : ""
-        } ${isContactPage ? "contact_collaboration" : ""}`}
+        } ${isContactPage ? "contact_collaboration" : ""} ${
+          isWorkPage ? "work_collaboration" : ""
+        }`}
       >
         <div className="container">
           <div className="collaboration_card_main">

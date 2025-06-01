@@ -39,6 +39,12 @@
 .main .main_frame .animation_circle_main .circle_2_main.about_circle .circle_2 {
   background-color: var(--blue-color);
 }
+.main .main_frame .animation_circle_main .circle_1_main.work_circle .circle_1,
+.main .main_frame .animation_circle_main .circle_1_main.work_circle .circle_2,
+.main .main_frame .animation_circle_main .circle_2_main.work_circle .circle_1,
+.main .main_frame .animation_circle_main .circle_2_main.work_circle .circle_2 {
+  background-color: var(--red-color);
+}
 .main .main_frame .animation_circle_main .circle_1_main.contact_circle .circle_1,
 .main .main_frame .animation_circle_main .circle_1_main.contact_circle .circle_2,
 .main .main_frame .animation_circle_main .circle_2_main.contact_circle .circle_1,
@@ -66,7 +72,6 @@
 .main .main_frame_content {
   overflow-y: scroll;
   overflow-x: hidden;
-  height: auto;
   position: relative;
   height: 100%;
 }
@@ -139,6 +144,9 @@
 }
 .main .main_frame_content .home_section .container .home_content.about_hero h1 span {
   color: var(--blue-color);
+}
+.main .main_frame_content .home_section .container .home_content.work_hero h1 span {
+  color: var(--red-color);
 }
 .main .main_frame_content .home_section .container .home_content.contact_hero h1 span {
   color: var(--light-blue-color);
@@ -781,6 +789,12 @@
 }
 .main .main_frame_content .collaboration_section.about_collaboration a:hover {
   border: 1px solid var(--blue-color);
+}
+.main .main_frame_content .collaboration_section.work_collaboration a::before {
+  background-color: var(--red-color);
+}
+.main .main_frame_content .collaboration_section.work_collaboration a:hover {
+  border: 1px solid var(--red-color);
 }
 .main .main_frame_content .collaboration_section.contact_collaboration a::before {
   background-color: var(--light-blue-color);

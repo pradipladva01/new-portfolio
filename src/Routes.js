@@ -3,6 +3,7 @@ import { useRoutes, Navigate } from "react-router-dom";
 import { retry } from "./utils/CommonFunctions";
 import AboutUs from "./pages/AboutUs";
 import Contact from "./pages/Contact";
+import Work from "./pages/Work";
 const Home = lazy(() => retry(() => import("./pages/Home")));
 
 const Routes = () => {
@@ -14,6 +15,10 @@ const Routes = () => {
     {
       path: "/about",
       element: <AboutUs />,
+    },
+    {
+      path: "/work",
+      element: <Work />,
     },
     {
       path: "/contact",

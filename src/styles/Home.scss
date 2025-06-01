@@ -46,6 +46,15 @@
                     }
                 }
 
+                &.work_circle {
+
+                    .circle_1,
+                    .circle_2 {
+
+                        background-color: var(--red-color);
+                    }
+                }
+
                 &.contact_circle {
 
                     .circle_1,
@@ -79,7 +88,6 @@
     .main_frame_content {
         overflow-y: scroll;
         overflow-x: hidden;
-        height: auto;
         position: relative;
         height: 100%;
 
@@ -180,6 +188,13 @@
                         h1 {
                             span {
                                 color: var(--blue-color);
+                            }
+                        }
+                    }
+                    &.work_hero {
+                        h1 {
+                            span {
+                                color: var(--red-color);
                             }
                         }
                     }
@@ -938,6 +953,18 @@
 
                     &:hover {
                         border: 1px solid var(--blue-color);
+                    }
+                }
+            }
+
+            &.work_collaboration {
+                a {
+                    &::before {
+                        background-color: var(--red-color);
+                    }
+
+                    &:hover {
+                        border: 1px solid var(--red-color);
                     }
                 }
             }

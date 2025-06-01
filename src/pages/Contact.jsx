@@ -16,6 +16,7 @@ import { useLocation } from "react-router-dom";
 import HeroSection from "../components/HeroSection";
 import AnimatedLinkButton from "../components/AnimatedLinkButton";
 import { useSnackbar } from "notistack";
+import useSocialUI from "../components/useSocialUI";
 
 const validationSchema = Yup.object({
   fullName: Yup.string().required(
@@ -31,34 +32,11 @@ const validationSchema = Yup.object({
 });
 
 const AboutUs = () => {
-  const [isMinimized, setIsMinimized] = useState(false);
-  const [showSocialShare, setShowSocialShare] = useState(false);
-  const [showLeaveSoon, setShowLeaveSoon] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [showThankYou, setShowThankYou] = useState(false);
   const { enqueueSnackbar } = useSnackbar();
   const location = useLocation();
   const isContactPage = location.pathname === "/contact";
-
-  const handleMinimize = () => {
-    setIsMinimized((prev) => !prev);
-    setShowSocialShare((prev) => !prev);
-  };
-  const handleCloseSocialShare = () => {
-    setIsMinimized(false);
-    setTimeout(() => {
-      setShowSocialShare(false);
-    }, 500);
-  };
-  const handleCloseLeaveSoon = () => {
-    setTimeout(() => {
-      setShowLeaveSoon(false);
-    }, 500);
-  };
-  const handleLeaveSoon = () => {
-    setShowLeaveSoon((prev) => !prev);
-  };
-
   const scrollingRef = useRef(null);
 
   useEffect(() => {
@@ -99,6 +77,16 @@ const AboutUs = () => {
       }
     });
   }, []);
+
+  const {
+    isMinimized,
+    showSocialShare,
+    showLeaveSoon,
+    handleMinimize,
+    handleCloseSocialShare,
+    handleLeaveSoon,
+    handleCloseLeaveSoon,
+  } = useSocialUI();
 
   const formik = useFormik({
     initialValues: {

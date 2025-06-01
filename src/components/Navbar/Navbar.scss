@@ -243,6 +243,19 @@
                 }
             }
         }
+
+        &.work_menu {
+            ul {
+                li {
+                    a {
+                        &.active {
+                            color: var(--red-color);
+                        }
+                    }
+                }
+            }
+        }
+
         &.contact_menu {
             ul {
                 li {
@@ -273,6 +286,25 @@
             }
         }
     }
+
+    &.work_navbar {
+        .nav_item {
+            ul {
+                li {
+                    a {
+                        &:hover {
+                            svg {
+                                g {
+                                    fill: var(--red-color);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     &.contact_navbar {
         .nav_item {
             ul {
@@ -324,6 +356,16 @@
                 }
             }
         }
+
+        &.work_top_bar {
+            svg {
+
+                .ladva {
+                    fill: var(--red-color);
+                }
+            }
+        }
+
         &.contact_top_bar {
             svg {
 
@@ -402,6 +444,15 @@
                     }
                 }
             }
+
+            &.work_logo {
+                svg {
+                    .ladva {
+                        fill: var(--red-color);
+                    }
+                }
+            }
+
             &.contact_logo {
                 svg {
                     .ladva {

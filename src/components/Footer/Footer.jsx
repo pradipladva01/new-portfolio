@@ -6,12 +6,13 @@ const Footer = () => {
   const location = useLocation();
   const isAboutPage = location.pathname === "/about";
   const isContactPage = location.pathname === "/contact";
+  const isWorkPage = location.pathname === "/work";
   return (
     <>
       <footer
-        className={`footer_section ${isAboutPage ? "about_footer" : ""} ${
+        className={`footer_section ${isAboutPage ? "about_footer" : ""}${
           isContactPage ? "contact_footer" : ""
-        }`}
+        } ${isWorkPage ? "work_footer" : ""}`}
       >
         <div className="container">
           <div className="footer_inner">

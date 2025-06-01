@@ -11,6 +11,7 @@ const Navbar = () => {
   const location = useLocation();
   const isAboutPage = location.pathname === "/about";
   const isContactPage = location.pathname === "/contact";
+  const isWorkPage = location.pathname === "/work";
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
@@ -22,7 +23,7 @@ const Navbar = () => {
       <div
         className={`navbar_section ${isAboutPage ? "about_navbar" : ""} ${
           isContactPage ? "contact_navbar" : ""
-        }`}
+        } ${isWorkPage ? "work_navbar" : ""}`}
       >
         <div className="brand">
           <NavLink to="/">p</NavLink>
@@ -105,9 +106,9 @@ const Navbar = () => {
         </nav>
         <Link
           to="/"
-          className={`res_logo ${isAboutPage ? "about_logo" : ""} ${
+          className={`res_logo ${isAboutPage ? "about_logo" : ""}${
             isContactPage ? "contact_logo" : ""
-          }`}
+          } ${isWorkPage ? "work_logo" : ""} `}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -141,7 +142,9 @@ const Navbar = () => {
         <div
           className={`navbar_menu ${menuOpen ? "open" : ""} ${
             isAboutPage ? "about_menu" : ""
-          } ${isContactPage ? "contact_menu" : ""}`}
+          } ${isContactPage ? "contact_menu" : ""} ${
+            isWorkPage ? "work_menu" : ""
+          }`}
         >
           <ul>
             <li>

@@ -18,7 +18,6 @@ import HeroSection from "../components/HeroSection";
 import useSocialUI from "../components/useSocialUI";
 
 gsap.registerPlugin(Draggable);
-
 const Home = () => {
   const boxRefs = useRef([]);
 

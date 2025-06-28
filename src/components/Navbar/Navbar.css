@@ -52,13 +52,30 @@
   opacity: 0.6;
   transition: all 0.5s;
 }
+.navbar_section .nav_item ul li a .blog_icon {
+  font-size: 18px;
+  stroke: var(--white-color);
+  fill: var(--white-color);
+  opacity: 0.6;
+  transition: all 0.5s;
+}
 .navbar_section .nav_item ul li a.active svg g {
   fill: var(--white-color);
+  opacity: 1;
+}
+.navbar_section .nav_item ul li a.active .blog_icon {
   opacity: 1;
 }
 .navbar_section .nav_item ul li a:hover svg g {
   fill: var(--primary-color);
   opacity: 1;
+}
+.navbar_section .nav_item ul li a:hover .blog_icon {
+  font-size: 18px;
+  stroke: var(--primary-color);
+  fill: var(--primary-color);
+  opacity: 0.6;
+  transition: all 0.5s;
 }
 .navbar_section .res_logo {
   display: none;
@@ -198,11 +215,23 @@
 .navbar_section.about_navbar .nav_item ul li a:hover svg g {
   fill: var(--blue-color);
 }
+.navbar_section.about_navbar .nav_item ul li a:hover .blog_icon {
+  fill: var(--blue-color);
+  opacity: 1;
+}
 .navbar_section.work_navbar .nav_item ul li a:hover svg g {
   fill: var(--red-color);
 }
+.navbar_section.work_navbar .nav_item ul li a:hover .blog_icon {
+  fill: var(--red-color);
+  opacity: 1;
+}
 .navbar_section.contact_navbar .nav_item ul li a:hover svg g {
   fill: var(--light-blue-color);
+}
+.navbar_section.contact_navbar .nav_item ul li a:hover .blog_icon {
+  fill: var(--light-blue-color);
+  opacity: 1;
 }
 
 .navbar_top_section {

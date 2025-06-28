@@ -1,1 +1,32 @@
-/*# sourceMappingURL=About.css.map */
+.about_content_main .online_box {
+  width: 40% !important;
+  bottom: 0% !important;
+}
+.about_content_main .portrait_box {
+  top: 40% !important;
+}
+.about_content_main .get_in_touch::before {
+  background-color: var(--blue-color);
+}
+.about_content_main .get_in_touch:hover {
+  border: 1px solid var(--blue-color);
+}
+
+.tech_stack_section {
+  padding: 64px 0;
+  width: 90%;
+  margin: 0 auto;
+}
+.tech_stack_section h1 {
+  font-family: "Object Sans";
+  font-size: 64px;
+  line-height: 1;
+  color: var(--white-color);
+  margin: 0;
+  letter-spacing: -3px;
+  text-align: center;
+  margin-bottom: 38px;
+}
+.tech_stack_section h1 span {
+  color: var(--blue-color);
+}/*# sourceMappingURL=About.css.map */

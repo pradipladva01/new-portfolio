@@ -55,12 +55,24 @@
                         }
                     }
 
+                    .blog_icon {
+                        font-size: 18px;
+                        stroke: var(--white-color);
+                        fill: var(--white-color);
+                        opacity: 0.6;
+                        transition: all 0.5s;
+                    }
+
                     &.active {
                         svg {
                             g {
                                 fill: var(--white-color);
                                 opacity: 1;
                             }
+                        }
+
+                        .blog_icon {
+                            opacity: 1;
                         }
                     }
 
@@ -70,6 +82,14 @@
                                 fill: var(--primary-color);
                                 opacity: 1;
                             }
+                        }
+
+                        .blog_icon {
+                            font-size: 18px;
+                            stroke: var(--primary-color);
+                            fill: var(--primary-color);
+                            opacity: 0.6;
+                            transition: all 0.5s;
                         }
                     }
                 }
@@ -280,6 +300,11 @@
                                     fill: var(--blue-color);
                                 }
                             }
+
+                            .blog_icon {
+                                fill: var(--blue-color);
+                                opacity: 1;
+                            }
                         }
                     }
                 }
@@ -298,6 +323,11 @@
                                     fill: var(--red-color);
                                 }
                             }
+
+                            .blog_icon {
+                                fill: var(--red-color);
+                                opacity: 1;
+                            }
                         }
                     }
                 }
@@ -315,6 +345,11 @@
                                 g {
                                     fill: var(--light-blue-color);
                                 }
+                            }
+
+                            .blog_icon {
+                                fill: var(--light-blue-color);
+                                opacity: 1;
                             }
                         }
                     }

@@ -1,7 +1,6 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import "../styles/Home.css";
 import "../styles/About.css";
-import gsap from "gsap";
 import Navbar from "../components/Navbar/Navbar";
 import NavbarTop from "../components/Navbar/NavbarTop";
 import SocialShare from "../components/SocialShare";
@@ -10,30 +9,15 @@ import FooterBottom from "../components/FooterBottom";
 import Footer from "../components/Footer/Footer";
 import { Helmet } from "react-helmet-async";
 import CollaborationCard from "../components/CollaborationCard";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import HeroSection from "../components/HeroSection";
 import useSocialUI from "../components/useSocialUI";
-import { motion } from "framer-motion";
+import portrait from "../resources/images/portrait.JPG";
+import AnimatedLinkButton from "../components/AnimatedLinkButton";
 
 const AboutUs = () => {
   const location = useLocation();
   const isAboutPage = location.pathname === "/about";
-  const [boxes, setBoxes] = useState({
-    box1: { x: 50, y: 50 },
-    box2: { x: 200, y: 100 },
-    box3: { x: 120, y: 220 },
-  });
-
-  // Update position on drag end
-  const handleDragEnd = (id, event, info) => {
-    setBoxes((prev) => ({
-      ...prev,
-      [id]: {
-        x: info.point.x,
-        y: info.point.y,
-      },
-    }));
-  };
 
   const {
     isMinimized,
@@ -44,17 +28,6 @@ const AboutUs = () => {
     handleLeaveSoon,
     handleCloseLeaveSoon,
   } = useSocialUI();
-
-  const scrollingRef = useRef(null);
-
-  useEffect(() => {
-    gsap.to(scrollingRef.current, {
-      xPercent: -50,
-      repeat: -1,
-      ease: "none",
-      duration: 70,
-    });
-  }, []);
 
   return (
     <>
@@ -89,7 +62,11 @@ const AboutUs = () => {
             <div className="frame_content_inner">
               <HeroSection
                 tag="About"
-                title={<>Let’s get to know</>}
+                title={
+                  <>
+                    Let’s get to <br /> know
+                  </>
+                }
                 scrollingText="pradip"
                 highlight="each other"
                 description={
@@ -101,49 +78,207 @@ const AboutUs = () => {
                   </>
                 }
               />
-              <div
-                style={{
-                  position: "relative",
-                  width: "100%",
-                  height: 500,
-                  border: "2px dashed #bbb",
-                  borderRadius: 10,
-                  marginTop: 20,
-                  overflow: "hidden", // keep boxes inside container visually
-                }}
-              >
-                {Object.entries(boxes).map(([id, pos]) => (
-                  <motion.div
-                    key={id}
-                    drag
-                    dragMomentum={false}
-                    dragConstraints={{
-                      top: 0,
-                      left: 0,
-                      right: 600,
-                      bottom: 500,
-                    }}
-                    onDragEnd={(event, info) => handleDragEnd(id, event, info)}
-                    style={{
-                      position: "absolute",
-                      top: pos.y,
-                      left: pos.x,
-                      width: 100,
-                      height: 100,
-                      backgroundColor: "#90caf9",
-                      border: "2px solid #1976d2",
-                      borderRadius: 8,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      cursor: "grab",
-                      userSelect: "none",
-                    }}
-                  >
-                    {id}
-                  </motion.div>
-                ))}
-              </div>
+              <section className="about_section">
+                <div className="container">
+                  <div className="about_content_main">
+                    <div className="about_me_box box">
+                      <div className="about_me_top box_top">
+                        <h6>about-me</h6>
+                      </div>
+                      <div className="about_me_bottom box_bottom">
+                        <p>
+                          Hi! I'm <span className="green">Pradip</span>, I'm a{" "}
+                          <span className="blue">
+                            Freelance Front-end Web Developer
+                          </span>
+                          {""}!
+                        </p>
+                        <p>
+                          My focus is on{" "}
+                          <span className="red">creative development</span>: my
+                          skills described as the{" "}
+                          <span className="purple">meeting point</span>, between{" "}
+                          <span className="yellow">creativity</span> and{" "}
+                          <span className="light_blue">
+                            technical proficiency
+                          </span>{" "}
+                        </p>
+                        <p>
+                          I integrate complex but smooth <span>animations</span>{" "}
+                          and <span className="blue">interactions</span>, into
+                          my projects, to present the website information in an
+                          <span className="red">engaging way</span>, and make it
+                          a{" "}
+                          <span className="light_blue">
+                            memorable experience
+                          </span>{" "}
+                        </p>
+                        <p>
+                          I strive to deliver projects that are{" "}
+                          <span className="purple">visually compelling</span> by
+                          working closely with the {""}
+                          <span className="yellow">designer</span> , but also
+                          technically outstanding with a{" "}
+                          <span>clean and properly structured code</span>. All
+                          of this, without forgetting about{" "}
+                          <span className="red">web performances</span> and{" "}
+                          <span className="blue">technical SEO</span> aspects.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="where_work_box box">
+                      <div className="where_work_top box_top">
+                        <h6>where-i-work</h6>
+                      </div>
+                      <div className="where_work_bottom box_bottom">
+                        <p>Currently based in Surat, India 🇮🇳</p>
+                        <p>
+                          Available for remote collaborations across{" "}
+                          <span className="red">India</span> 🇮🇳 and worldwide 🌎
+                        </p>
+                      </div>
+                    </div>
+                    <div className="portrait_box box">
+                      <div className="portrait_box_top box_top">
+                        <h6>portrait</h6>
+                      </div>
+                      <div className="portrait_box_bottom box_bottom">
+                        <div className="image_main">
+                          <img src={portrait} alt={portrait} />
+                        </div>
+                      </div>
+                    </div>
+                    <div className="online_box box">
+                      <div className="online_box_top box_top">
+                        <h6>me-online</h6>
+                      </div>
+                      <div className="online_box_bottom box_bottom">
+                        <p>
+                          <Link to="">
+                            linkedin{" "}
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              aria-hidden="true"
+                              role="img"
+                              className=" iconify iconify--custom"
+                              width="1em"
+                              height="1em"
+                              viewBox="0 0 24 24"
+                            >
+                              <g fill="currentColor">
+                                <path d="M7 6a1 1 0 0 0-1 1 1 1 0 0 0 1 1h7.59l-8.3 8.3a1 1 0 0 0 0 1.4 1 1 0 0 0 1.42 0L16 9.42V17a1 1 0 0 0 1 1 1 1 0 0 0 1-1V7l-.03-.17-.03-.14-.02-.07a1 1 0 0 0-.21-.33 1 1 0 0 0-.33-.21A1 1 0 0 0 17 6Z"></path>
+                              </g>
+                            </svg>
+                          </Link>
+                        </p>
+                        <p>
+                          <Link to="">
+                            instagram{" "}
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              aria-hidden="true"
+                              role="img"
+                              className=" iconify iconify--custom"
+                              width="1em"
+                              height="1em"
+                              viewBox="0 0 24 24"
+                            >
+                              <g fill="currentColor">
+                                <path d="M7 6a1 1 0 0 0-1 1 1 1 0 0 0 1 1h7.59l-8.3 8.3a1 1 0 0 0 0 1.4 1 1 0 0 0 1.42 0L16 9.42V17a1 1 0 0 0 1 1 1 1 0 0 0 1-1V7l-.03-.17-.03-.14-.02-.07a1 1 0 0 0-.21-.33 1 1 0 0 0-.33-.21A1 1 0 0 0 17 6Z"></path>
+                              </g>
+                            </svg>
+                          </Link>
+                        </p>
+                        <p>
+                          <Link to="">
+                            twitter{" "}
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              aria-hidden="true"
+                              role="img"
+                              className=" iconify iconify--custom"
+                              width="1em"
+                              height="1em"
+                              viewBox="0 0 24 24"
+                            >
+                              <g fill="currentColor">
+                                <path d="M7 6a1 1 0 0 0-1 1 1 1 0 0 0 1 1h7.59l-8.3 8.3a1 1 0 0 0 0 1.4 1 1 0 0 0 1.42 0L16 9.42V17a1 1 0 0 0 1 1 1 1 0 0 0 1-1V7l-.03-.17-.03-.14-.02-.07a1 1 0 0 0-.21-.33 1 1 0 0 0-.33-.21A1 1 0 0 0 17 6Z"></path>
+                              </g>
+                            </svg>
+                          </Link>
+                        </p>
+                        <p>
+                          <Link>
+                            discord{" "}
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              aria-hidden="true"
+                              role="img"
+                              className=" iconify iconify--custom"
+                              width="1em"
+                              height="1em"
+                              viewBox="0 0 24 24"
+                            >
+                              <g fill="currentColor">
+                                <path d="M7 6a1 1 0 0 0-1 1 1 1 0 0 0 1 1h7.59l-8.3 8.3a1 1 0 0 0 0 1.4 1 1 0 0 0 1.42 0L16 9.42V17a1 1 0 0 0 1 1 1 1 0 0 0 1-1V7l-.03-.17-.03-.14-.02-.07a1 1 0 0 0-.21-.33 1 1 0 0 0-.33-.21A1 1 0 0 0 17 6Z"></path>
+                              </g>
+                            </svg>
+                          </Link>
+                        </p>
+                        <p>
+                          <Link to="">
+                            github{" "}
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              aria-hidden="true"
+                              role="img"
+                              className=" iconify iconify--custom"
+                              width="1em"
+                              height="1em"
+                              viewBox="0 0 24 24"
+                            >
+                              <g fill="currentColor">
+                                <path d="M7 6a1 1 0 0 0-1 1 1 1 0 0 0 1 1h7.59l-8.3 8.3a1 1 0 0 0 0 1.4 1 1 0 0 0 1.42 0L16 9.42V17a1 1 0 0 0 1 1 1 1 0 0 0 1-1V7l-.03-.17-.03-.14-.02-.07a1 1 0 0 0-.21-.33 1 1 0 0 0-.33-.21A1 1 0 0 0 17 6Z"></path>
+                              </g>
+                            </svg>
+                          </Link>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="get_in_touch_main">
+                    <AnimatedLinkButton
+                      to="/contact"
+                      text="about-me"
+                      emoji={
+                        <>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            aria-hidden="true"
+                            role="img"
+                            className="iconify iconify--custom"
+                            width="1em"
+                            height="1em"
+                            viewBox="0 0 24 24"
+                          >
+                            <g fill="currentColor">
+                              <path d="M12 4a1 1 0 0 0-.707.293 1 1 0 0 0 0 1.414L16.586 11H5a1 1 0 0 0-1 1 1 1 0 0 0 1 1h11.586l-5.293 5.293a1 1 0 0 0 0 1.414 1 1 0 0 0 1.414 0l7-7a1 1 0 0 0 .26-.447 1 1 0 0 0 0-.18L20 12a1 1 0 0 0-.033-.166 1 1 0 0 0-.028-.143 1 1 0 0 0-.232-.398l-7-7A1 1 0 0 0 12 4"></path>
+                            </g>
+                          </svg>
+                        </>
+                      }
+                    />
+                  </div>
+                </div>
+              </section>
+              <section className="tech_stack_section">
+                <div className="container">
+                  <h1>
+                    Some of the techs I like to <br /> <span>work with</span>
+                  </h1>
+                  <div className="tech_stack_main"></div>
+                </div>
+              </section>
               <CollaborationCard />
             </div>
             <Footer />

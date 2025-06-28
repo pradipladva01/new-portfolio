@@ -6,6 +6,7 @@ import instagramIcon from "../../resources/images/instagram_icon.svg";
 import twitterIcon from "../../resources/images/twitter_icon.svg";
 import githubIcon from "../../resources/images/github_icon.svg";
 import discordIcon from "../../resources/images/discord_icon.svg";
+import { RiBloggerLine } from "react-icons/ri";
 
 const Navbar = () => {
   const location = useLocation();
@@ -82,6 +83,11 @@ const Navbar = () => {
                     <path d="M6.2 3c-1.12 0-1.82-.05-2.56.33a3 3 0 0 0-1.31 1.3C1.95 5.39 2 6.09 2 7.2v8.22c-.56.35-1 .87-1 1.58v.33c0 .62-.02 1 .1 1.45a3 3 0 0 0 2.12 2.12c.46.12.83.1 1.45.1h14.66c.62 0 1 .02 1.45-.1a3 3 0 0 0 2.12-2.12c.12-.46.1-.83.1-1.45 0-.3.02-.52-.07-.85-.13-.5-.5-.87-.93-1.13V7.2c0-1.12.05-1.82-.33-2.56a3 3 0 0 0-1.3-1.31C19.61 2.95 18.91 3 17.8 3Zm0 2h11.6c1.12 0 1.54.05 1.65.1a1 1 0 0 1 .44.45c.06.11.11.53.11 1.65V15h-4.34c-.24 0-.44-.01-.71.05a2 2 0 0 0-.58.24c-.24.15-.37.3-.55.47l-.06.06c-.17.18-.21.2-.17.18H10.4c.04.02 0 0-.17-.18l-.06-.06c-.18-.17-.31-.32-.55-.47a2 2 0 0 0-.58-.24c-.26-.05-.46-.05-.7-.05H4V7.2c0-1.12.05-1.54.1-1.65a1 1 0 0 1 .45-.44C4.66 5.05 5.08 5 6.2 5M3 17h5.59c-.04-.02 0 0 .17.18l.06.06c.18.17.31.32.55.47a2 2 0 0 0 .58.24c.27.06.47.05.71.05h2.68c.24 0 .44.01.71-.05a2 2 0 0 0 .58-.24c.24-.15.37-.3.55-.47l.06-.06c.17-.18.21-.2.17-.18H21q-.02-.12 0 .33c0 .62-.02.87-.03.93a1 1 0 0 1-.71.7c-.06.02-.3.04-.93.04H4.67a8 8 0 0 1-.93-.03 1 1 0 0 1-.7-.71c-.02-.06-.04-.3-.04-.93Z"></path>
                   </g>
                 </svg>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/blog">
+                <RiBloggerLine className="blog_icon"/>
               </NavLink>
             </li>
             <li>

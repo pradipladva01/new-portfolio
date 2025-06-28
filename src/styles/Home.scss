@@ -191,6 +191,7 @@
                             }
                         }
                     }
+
                     &.work_hero {
                         h1 {
                             span {
@@ -1318,6 +1319,10 @@
         width: 58%;
         position: unset;
         margin-left: auto;
+    }
+
+    .main .about_content_main .about_section .about_content_main .online_box {
+        width: 100% !important;
     }
 
     .main .main_frame_content .project_section .projects_list a .project_box {
